@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baker's Haven | Freshly Baked Joy</title>
+    <meta
+      name="description"
+      content="Baker's Haven is a cozy bakery and baking studio with artisan breads, pastries, cakes, and workshops."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="Baker's Haven home">
+          <span class="brand-mark">BH</span>
+          <span>Baker's Haven</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#classes">Classes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Order now</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Freshly baked every day</p>
+            <h1>Warm, golden comfort for every sweet moment.</h1>
+            <p class="lead">
+              From flaky pastries to rich celebration cakes, we bake each treat with
+              slow fermentation, premium ingredients, and a whole lot of heart.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">Explore menu</a>
+              <a href="#about" class="btn btn-secondary">Our story</a>
+            </div>
+
+            <ul class="hero-stats" aria-label="Bakery highlights">
+              <li><strong>4.9/5</strong><span>Customer rating</span></li>
+              <li><strong>1,200+</strong><span>Happy bakers</span></li>
+              <li><strong>15 yrs</strong><span>Crafted with care</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Fresh bakery assortment">
+            <div class="hero-card main-card">
+              <div class="card-top">
+                <span>Today's special</span>
+                <span class="tag">Best seller</span>
+              </div>
+              <h3>Cinnamon Swirl Loaf</h3>
+              <p>Soft, buttery crumb with a warming spice finish.</p>
+              <div class="price-row">
+                <strong>$12.50</strong>
+                <button type="button">Add to box</button>
+              </div>
+            </div>
+            <div class="hero-badge badge-one">Handmade</div>
+            <div class="hero-badge badge-two">Organic flour</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured section" id="menu">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Popular picks</p>
+            <h2>Signature bakes made for sharing.</h2>
+          </div>
+
+          <div class="recipe-grid">
+            <article class="recipe-card">
+              <div class="img img-one"></div>
+              <div class="card-body">
+                <div class="card-label-row">
+                  <span class="chip">Bread</span>
+                  <span class="price">$9</span>
+                </div>
+                <h3>Sourdough Sunrise</h3>
+                <p>Slow-fermented and crisp on the outside, airy on the inside.</p>
+              </div>
+            </article>
+
+            <article class="recipe-card">
+              <div class="img img-two"></div>
+              <div class="card-body">
+                <div class="card-label-row">
+                  <span class="chip">Pastry</span>
+                  <span class="price">$7</span>
+                </div>
+                <h3>Berry Danish</h3>
+                <p>Flaky layers with vanilla cream and tart berry compote.</p>
+              </div>
+            </article>
+
+            <article class="recipe-card">
+              <div class="img img-three"></div>
+              <div class="card-body">
+                <div class="card-label-row">
+                  <span class="chip">Cake</span>
+                  <span class="price">$28</span>
+                </div>
+                <h3>Vanilla Bean Celebration</h3>
+                <p>Soft sponge, silky frosting, and a velvet finish for every occasion.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-image" aria-label="Bakery kitchen"></div>
+          <div class="about-copy">
+            <p class="eyebrow">Our baking philosophy</p>
+            <h2>We bake with patience, ingredients you can trust, and joy in every batch.</h2>
+            <p>
+              At Baker's Haven, we believe great bread and pastry begin with quality ingredients,
+              careful technique, and a little bit of wonder. Every loaf is proofed slowly, every
+              pastry folded with intention, and every cake made to celebrate real moments.
+            </p>
+            <ul class="icon-list">
+              <li>Locally sourced ingredients</li>
+              <li>Small-batch artisan baking</li>
+              <li>Freshly made daily</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="classes section" id="classes">
+        <div class="container">
+          <div class="section-heading narrow">
+            <p class="eyebrow">Hands-on workshops</p>
+            <h2>Learn the craft from our bakery kitchen.</h2>
+          </div>
+
+          <div class="class-grid">
+            <article class="class-card">
+              <span class="class-time">Saturday • 10:00 AM</span>
+              <h3>Artisan Bread Basics</h3>
+              <p>Make rustic loaves, learn shaping, and master a simple sourdough starter.</p>
+            </article>
+            <article class="class-card">
+              <span class="class-time">Sunday • 1:00 PM</span>
+              <h3>Pastry Perfection</h3>
+              <p>Perfect croissants, danishes, and laminated dough techniques in a warm studio.</p>
+            </article>
+            <article class="class-card">
+              <span class="class-time">Monthly • 6:30 PM</span>
+              <h3>Celebration Cake Lab</h3>
+              <p>Build beautiful cakes and learn buttercream art for birthdays and events.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial section">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">What people say</p>
+            <h2>Sweet words from our regulars.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <blockquote>
+              “The cinnamon loaf tastes like a hug. Every visit feels like a little celebration.”
+              <footer>— Maya L.</footer>
+            </blockquote>
+            <blockquote>
+              “Our wedding cake was breathtaking and even better than it looked. Truly unforgettable.”
+              <footer>— Daniel & Priya</footer>
+            </blockquote>
+            <blockquote>
+              “The bread workshop was so welcoming and informative. I left with confidence and a loaf.”
+              <footer>— Jordan T.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section" id="contact">
+        <div class="container cta-box">
+          <div>
+            <p class="eyebrow">Fresh from our oven</p>
+            <h2>Bring a little warmth to your next gathering.</h2>
+          </div>
+          <div class="cta-actions">
+            <a href="mailto:hello@bakershaven.com" class="btn btn-primary">Book a tasting</a>
+            <a href="tel:+15550198" class="btn btn-secondary">Call us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="#home" class="brand footer-brand">
+            <span class="brand-mark">BH</span>
+            <span>Baker's Haven</span>
+          </a>
+          <p>Artisan breads, pastries, and cakes made for everyday joy.</p>
+        </div>
+
+        <div>
+          <h3>Visit</h3>
+          <ul>
+            <li>24 Maple Lane</li>
+            <li>Brookside, CA</li>
+            <li>Open daily 7am–6pm</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Baker's Haven.</span>
+        <span>Made with love and flour.</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
