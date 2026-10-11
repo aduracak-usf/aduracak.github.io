@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Create and manage interior design room plans with styles, budgets, and project status." />
+    <title>Room plans | Roomwise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="design.css" /><script src="data.js" defer></script><script src="script.js" defer></script><script src="projects.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header"><div class="shell nav-shell"><a class="wordmark" href="index.html" aria-label="Roomwise home"><span class="wordmark-icon">R</span><span>roomwise</span></a><button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="projects.html" aria-current="page">Room plans</a><a href="analytics.html">Insights</a><a href="aboutus.html">About</a></nav><a class="button button-dark header-action" href="#plan-form">Add a plan <span aria-hidden="true">+</span></a></div></header>
+    <main class="shell page-main">
+      <section class="page-intro compact-intro"><p class="kicker">Your design workspace</p><h1>Room plans,<br /><em>all in one place.</em></h1><p class="page-lede">Keep the essentials visible: room, style direction, estimated budget, and where each plan stands.</p></section>
+      <section class="plans-layout" aria-label="Manage room plans">
+        <div class="plan-editor" id="editor"><div class="editor-heading"><div><p class="kicker">Plan details</p><h2 id="form-title">Add a room plan</h2></div><span class="editor-count">CRUD / 01</span></div>
+          <form id="plan-form"><input type="hidden" id="plan-id" name="id" />
+            <label for="plan-name">Plan name</label><input id="plan-name" name="name" type="text" placeholder="e.g. A brighter living room" maxlength="60" required />
+            <div class="field-row"><div><label for="room-type">Room</label><select id="room-type" name="room" required><option value="">Choose a room</option><option>Living room</option><option>Bedroom</option><option>Kitchen</option><option>Dining room</option><option>Office</option><option>Outdoor</option></select></div><div><label for="design-style">Style</label><select id="design-style" name="style" required><option value="">Choose a style</option><option>Warm minimal</option><option>Modern organic</option><option>Scandinavian</option><option>Mid-century</option><option>Transitional</option><option>Coastal</option></select></div></div>
+            <div class="field-row"><div><label for="plan-area">Area <span>(sq ft)</span></label><input id="plan-area" name="area" type="number" min="20" max="20000" placeholder="240" required /></div><div><label for="plan-budget">Budget <span>(USD)</span></label><input id="plan-budget" name="budget" type="number" min="100" max="1000000" step="50" placeholder="4500" required /></div></div>
+            <label for="plan-status">Status</label><select id="plan-status" name="status" required><option>Considering</option><option>Planning</option><option>In progress</option><option>Complete</option></select>
+            <div class="form-actions"><button class="button button-dark" id="save-plan" type="submit">Save room plan <span aria-hidden="true">↗</span></button><button class="button button-quiet" id="cancel-edit" type="button" hidden>Cancel edit</button></div><p class="form-note">Demo plans are saved in this browser only.</p>
+          </form>
+        </div>
+        <div class="plan-list"><div class="list-heading"><div><p class="kicker">Project library</p><h2>Saved plans <span id="plan-count">0</span></h2></div><label class="search-field"><span class="visually-hidden">Search room plans</span><input id="plan-search" type="search" placeholder="Search plans" /><span aria-hidden="true">⌕</span></label></div>
+          <p class="status-message" id="status-message" role="status" aria-live="polite"></p><div class="table-scroll"><table><thead><tr><th scope="col">Room plan</th><th scope="col">Style</th><th scope="col">Area</th><th scope="col">Budget</th><th scope="col">Status</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead><tbody id="plans-body"></tbody></table></div>
+          <div class="empty-state" id="empty-state" hidden><span class="empty-mark">R</span><h3>No plans found</h3><p>Add a room plan or try a different search.</p></div><p class="table-footnote">These sample plans are not from the Kaggle order dataset. Browser localStorage is used to demonstrate CRUD without a server.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="shell footer-row"><a class="wordmark footer-wordmark" href="index.html"><span class="wordmark-icon">R</span><span>roomwise</span></a><span>Interior design, thoughtfully planned.</span><span>© <span data-year></span> Roomwise / Student project</span></div></footer>
+  </body>
+</html>

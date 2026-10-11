@@ -1,22 +1,23 @@
 const navToggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.main-nav');
-const yearEl = document.querySelector('#year');
+const primaryNav = document.querySelector('.primary-nav');
 
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
-if (navToggle && nav) {
+if (navToggle && primaryNav) {
   navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    nav.classList.toggle('open');
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!isExpanded));
+    navToggle.setAttribute('aria-label', isExpanded ? 'Open navigation' : 'Close navigation');
+    primaryNav.classList.toggle('is-open', !isExpanded);
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
+  primaryNav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      primaryNav.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
-    });
+      navToggle.setAttribute('aria-label', 'Open navigation');
+    }
   });
 }
+
+document.querySelectorAll('[data-year]').forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
