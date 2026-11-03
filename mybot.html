@@ -134,6 +134,104 @@
       margin: 0 auto;
     }
 
+    .dashboard { padding: 48px 0 80px; background: #f5efe7; }
+    .dashboard-heading {
+      display: flex;
+      margin-bottom: 30px;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .dashboard-heading h1 { margin: 0; font-size: clamp(2.4rem, 5vw, 3.8rem); }
+    .dashboard-heading p:last-child { max-width: 430px; margin: 0 0 4px; color: var(--muted); }
+    .dashboard-stats { display: grid; margin-bottom: 34px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .stat-card {
+      display: flex;
+      min-height: 100px;
+      padding: 18px 20px;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--paper);
+    }
+    .stat-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border-radius: 15px; background: #f4e3df; color: var(--rose); font-size: 1.3rem; }
+    .stat-card:nth-child(2) .stat-icon { background: #e9eee5; color: #64765f; }
+    .stat-card:nth-child(3) .stat-icon { background: #f4ead6; color: #927143; }
+    .stat-number { display: block; font-family: var(--serif); font-size: 1.8rem; line-height: 1.1; }
+    .stat-label { color: var(--muted); font-size: .85rem; }
+    .dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 20px; align-items: start; }
+    .dashboard-panel { padding: 23px; border: 1px solid var(--line); border-radius: 19px; background: var(--paper); }
+    .dashboard-panel-heading { display: flex; margin-bottom: 17px; align-items: center; justify-content: space-between; gap: 10px; }
+    .dashboard-panel-heading h2 { margin: 0; font-size: 1.65rem; }
+    .dashboard-panel-heading a { color: var(--rose); font-size: .87rem; font-weight: 750; text-decoration: none; }
+    .dashboard-panel-heading a:hover { text-decoration: underline; }
+    .next-up-list { display: grid; gap: 10px; }
+    .next-up-item { display: grid; padding: 13px 14px; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; border-radius: 13px; background: #f7f2ec; }
+    .next-up-item strong { display: block; font-family: var(--serif); font-size: 1.08rem; font-weight: 600; }
+    .next-up-item span { color: var(--muted); font-size: .81rem; }
+    .next-up-item button { padding: 7px 10px; border: 1px solid #d5c7bd; border-radius: 999px; background: var(--paper); color: var(--charcoal); cursor: pointer; font-size: .8rem; font-weight: 700; }
+    .dashboard-empty { padding: 18px; border-radius: 13px; background: #f7f2ec; color: var(--muted); font-size: .9rem; }
+    .quick-actions { display: grid; gap: 10px; }
+    .quick-action {
+      display: flex;
+      min-height: 50px;
+      padding: 11px 14px;
+      align-items: center;
+      gap: 11px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: white;
+      color: var(--charcoal);
+      cursor: pointer;
+      font-weight: 700;
+      text-align: left;
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .quick-action:hover { transform: translateY(-2px); border-color: var(--blush); }
+    .quick-action span:first-child { display: grid; width: 29px; height: 29px; flex: 0 0 auto; place-items: center; border-radius: 10px; background: #f5e5e5; color: var(--rose); }
+    .companion-card {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f2e5e4;
+    }
+    .companion-card p { margin: 0 0 12px; color: #665458; font-size: .85rem; }
+    .companion-card strong { display: block; margin-bottom: 5px; font-family: var(--serif); font-size: 1.15rem; }
+    .companion-card a { color: var(--rose); font-size: .87rem; font-weight: 800; text-decoration: none; }
+    .companion-card a:hover { text-decoration: underline; }
+    .inspiration-board { margin-top: 24px; }
+    .inspiration-board-header { display: flex; margin: 46px 0 20px; align-items: end; justify-content: space-between; gap: 16px; }
+    .inspiration-board-header h2 { margin: 0; font-size: clamp(1.9rem, 4vw, 2.7rem); }
+    .inspiration-board-header p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .visual-board { display: grid; grid-template-columns: 1.15fr .85fr 1fr; gap: 15px; }
+    .inspiration-tile {
+      position: relative;
+      display: flex;
+      min-height: 245px;
+      padding: 0;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      border: 0;
+      border-radius: 19px;
+      background: #e8b9bf;
+      color: var(--charcoal);
+      cursor: pointer;
+      text-align: left;
+      isolation: isolate;
+    }
+    .inspiration-tile svg { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; }
+    .inspiration-tile::after { position: absolute; z-index: -1; inset: 45% 0 0; background: linear-gradient(transparent, rgb(45 39 36 / 66%)); content: ""; }
+    .inspiration-label { display: grid; padding: 17px; gap: 2px; color: white; text-shadow: 0 1px 5px rgb(0 0 0 / 18%); }
+    .inspiration-label strong { font-family: var(--serif); font-size: 1.42rem; font-weight: 500; }
+    .inspiration-label span { font-size: .82rem; }
+    .inspiration-tile:nth-child(2) { min-height: 285px; background: #a7b8a0; }
+    .inspiration-tile:nth-child(3) { min-height: 225px; background: #e4cba2; }
+    .inspiration-tile:hover svg { transform: scale(1.035); }
+    .inspiration-tile svg { transition: transform .35s ease; }
+
     .hero {
       position: relative;
       display: grid;
@@ -507,6 +605,7 @@
     .detail-box p, .detail-box ol { margin: 0; color: var(--muted); font-size: .9rem; }
     .detail-box ol { padding-left: 19px; }
     .fit-note { margin: 14px 0 0; padding: 12px 14px; border-radius: 11px; background: #e9eee5; color: #4f5c4a !important; font-size: .9rem; }
+    .assistant-handoff { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 
     .assistant-section { background: var(--paper); }
 
@@ -546,6 +645,18 @@
     }
 
     .bot-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--sage); }
+    .assistant-context {
+      margin-bottom: 15px;
+      padding: 17px;
+      border: 1px solid rgb(164 107 120 / 22%);
+      border-radius: 15px;
+      background: #fff9f6;
+    }
+    .assistant-context[hidden] { display: none; }
+    .assistant-context h3 { margin-bottom: 6px; font-size: 1.2rem; }
+    .assistant-context p { margin-bottom: 10px; font-size: .88rem; }
+    .assistant-context textarea { min-height: 92px; background: white; font-size: .86rem; }
+    .assistant-context .status-message { margin-bottom: 0; }
 
     #webchat {
       display: grid;
@@ -651,6 +762,9 @@
       .ideas-form-panel { position: static; }
       .roadmap-grid { grid-template-columns: 1fr; }
       .benefit-grid { grid-template-columns: 1fr; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .visual-board { grid-template-columns: 1fr 1fr; }
+      .inspiration-tile:nth-child(2) { min-height: 245px; }
     }
 
     @media (max-width: 540px) {
@@ -674,6 +788,16 @@
       .quote-mark { display: none; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-nav { justify-content: flex-start; }
+      .dashboard { padding-top: 34px; }
+      .dashboard-heading { align-items: flex-start; flex-direction: column; }
+      .dashboard-stats { gap: 8px; }
+      .stat-card { min-height: 84px; padding: 12px 10px; flex-direction: column; align-items: flex-start; gap: 8px; }
+      .stat-icon { width: 36px; height: 36px; border-radius: 12px; }
+      .stat-number { font-size: 1.45rem; }
+      .stat-label { font-size: .73rem; }
+      .visual-board { grid-template-columns: 1fr; }
+      .inspiration-tile, .inspiration-tile:nth-child(2), .inspiration-tile:nth-child(3) { min-height: 210px; }
+      .inspiration-board-header { align-items: flex-start; flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -697,6 +821,7 @@
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#home" data-view-link="home" aria-current="page">Home</a>
+        <a href="#dashboard" data-view-link="dashboard">Dashboard</a>
         <a href="#explore" data-view-link="explore">Explore</a>
         <a href="#ideas" data-view-link="ideas">My Ideas</a>
         <a href="#planner" data-view-link="planner">Creative Planner</a>
@@ -722,6 +847,105 @@
           <strong>Less collecting ideas.</strong>
           More creating them.
         </aside>
+      </div>
+    </section>
+
+    <section class="studio-view dashboard" id="dashboard" data-view="dashboard" aria-labelledby="dashboard-title" hidden>
+      <div class="section-wrap">
+        <header class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Your creative corner</p>
+            <h1 id="dashboard-title">A little room to make.</h1>
+          </div>
+          <p>Pick up a project, follow a color, or find one small thing to make time for today.</p>
+        </header>
+
+        <div class="dashboard-stats" aria-label="Your creative project overview">
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">✦</span>
+            <span><strong class="stat-number" id="dashboard-total">0</strong><span class="stat-label">Ideas saved</span></span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">↗</span>
+            <span><strong class="stat-number" id="dashboard-active">0</strong><span class="stat-label">In progress</span></span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">♡</span>
+            <span><strong class="stat-number" id="dashboard-completed">0</strong><span class="stat-label">Completed</span></span>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="dashboard-panel" aria-labelledby="next-up-title">
+            <div class="dashboard-panel-heading">
+              <h2 id="next-up-title">Pick up where you left off</h2>
+              <a href="#ideas" data-view-link="ideas">All projects →</a>
+            </div>
+            <div id="dashboard-next-up" class="next-up-list" aria-live="polite"></div>
+          </section>
+          <aside class="dashboard-panel" aria-labelledby="quick-actions-title">
+            <div class="dashboard-panel-heading">
+              <h2 id="quick-actions-title">A quick next step</h2>
+            </div>
+            <div class="quick-actions">
+              <button class="quick-action" type="button" data-open-view="ideas" data-focus="idea-title"><span aria-hidden="true">＋</span><span>Add a project idea</span></button>
+              <button class="quick-action" type="button" data-open-view="planner"><span aria-hidden="true">✦</span><span>Find a creative moment</span></button>
+              <button class="quick-action" type="button" data-open-view="assistant"><span aria-hidden="true">♡</span><span>Meet your AI companion</span></button>
+            </div>
+            <div class="companion-card">
+              <strong>Your creative companion</strong>
+              <p>The Botpress chat will appear in the AI Assistant view when you add your published bot’s official embed.</p>
+              <a href="#assistant" data-view-link="assistant">Visit AI Assistant →</a>
+            </div>
+          </aside>
+        </div>
+
+        <section class="inspiration-board" aria-labelledby="visual-board-title">
+          <div class="inspiration-board-header">
+            <div>
+              <p class="eyebrow">No big plan required</p>
+              <h2 id="visual-board-title">Follow a little inspiration</h2>
+            </div>
+            <p>Choose an image to shape your next creative moment.</p>
+          </div>
+          <div class="visual-board">
+            <button class="inspiration-tile" type="button" data-inspiration-category="Painting" aria-label="Plan a painting inspired by warm colors and wildflowers">
+              <svg viewBox="0 0 420 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="420" height="300" fill="#e9b9bf"/>
+                <circle cx="320" cy="72" r="52" fill="#f8f3eb" opacity=".8"/>
+                <path d="M0 220c65-60 105-41 157 6 55-86 104-63 153-5 38-42 73-43 110-4v83H0Z" fill="#a7b8a0"/>
+                <path d="M80 227c10-52 7-89-3-122m4 91 37-36m-38 19-28-28m236 71c4-48 18-75 40-96m-34 75-31-27m39-14 32-19" stroke="#667b60" stroke-width="8" stroke-linecap="round"/>
+                <g fill="#a46b78"><circle cx="77" cy="104" r="16"/><circle cx="64" cy="91" r="11"/><circle cx="90" cy="89" r="11"/><circle cx="65" cy="116" r="11"/><circle cx="91" cy="117" r="11"/><circle cx="327" cy="95" r="13"/><circle cx="315" cy="82" r="9"/><circle cx="339" cy="82" r="9"/><circle cx="315" cy="108" r="9"/><circle cx="339" cy="108" r="9"/></g>
+                <circle cx="78" cy="103" r="7" fill="#f3d996"/><circle cx="327" cy="95" r="6" fill="#f3d996"/>
+                <path d="M186 67c16 9 23 25 18 42m3 116c11-18 25-26 44-25" stroke="#f8f3eb" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+              </svg>
+              <span class="inspiration-label"><strong>Wildflower colors</strong><span>Plan a painting</span></span>
+            </button>
+            <button class="inspiration-tile" type="button" data-inspiration-category="Sewing" aria-label="Plan a sewing project inspired by a colorful fabric patchwork">
+              <svg viewBox="0 0 340 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="340" height="330" fill="#a7b8a0"/>
+                <path d="M45 31h252v250H45z" fill="#f8f3eb" transform="rotate(-7 45 31)"/>
+                <path d="m75 63 77-10 12 82-80 12zm94-12 77-9 10 82-76 10zm-85 112 80-10 10 81-79 9zm96-12 77-9 10 80-77 10z" fill="#e8b9bf"/>
+                <path d="m75 63 77-10 12 82-80 12zm-85 112 80-10 10 81-79 9z" fill="#a46b78" opacity=".78"/>
+                <path d="M79 68 156 58m-70 93 79-10m18-74 76-10m-75 93 78-10m-145 7 11 80m84-184 10 81m-83 22 10 80m87-95 10 80" stroke="#fffdf9" stroke-width="4" stroke-dasharray="3 8"/>
+                <path d="M251 219c15 8 24 23 25 44m-27-31c-17 2-29 12-36 29m54-7 28-17" stroke="#667b60" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="253" cy="211" r="12" fill="#a46b78"/><circle cx="293" cy="231" r="8" fill="#e8b9bf"/>
+              </svg>
+              <span class="inspiration-label"><strong>Little fabric stories</strong><span>Plan a sewing project</span></span>
+            </button>
+            <button class="inspiration-tile" type="button" data-inspiration-category="DIY" aria-label="Plan a creative DIY project inspired by a handmade paper collage">
+              <svg viewBox="0 0 370 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <rect width="370" height="280" fill="#e4cba2"/>
+                <path d="M52 42h258v205H52z" fill="#fffdf9" transform="rotate(4 52 42)"/>
+                <path d="m109 68 53-19 18 66-57 18zm91-13 65 21-20 58-62-23zM91 155l70-19 18 58-69 20zm98-20 67 15-13 63-69-15z" fill="#a46b78"/>
+                <path d="m109 68 53-19 18 66-57 18zM91 155l70-19 18 58-69 20z" fill="#e8b9bf"/>
+                <circle cx="265" cy="185" r="19" fill="#a7b8a0"/><path d="M265 166v-29m0 14-13-10m13 19 14-9" stroke="#667b60" stroke-width="5" stroke-linecap="round"/>
+                <path d="M255 73c10-16 21-16 31 0-10 16-21 16-31 0Z" fill="#f0d995"/>
+              </svg>
+              <span class="inspiration-label"><strong>Cut, paste, play</strong><span>Plan a DIY project</span></span>
+            </button>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -933,6 +1157,9 @@
             </div>
           </div>
           <button class="button button-secondary button-small" type="button" id="save-recommendation">Save to My Ideas</button>
+          <div class="assistant-handoff">
+            <a class="button button-secondary button-small" id="discuss-recommendation" href="#assistant" data-view-link="assistant">Take this idea to the AI Assistant</a>
+          </div>
           <p class="status-message" id="recommendation-message" role="status" aria-live="polite"></p>
         </article>
       </div>
@@ -953,6 +1180,16 @@
           </ul>
         </div>
         <div>
+          <div class="assistant-context" id="assistant-context" hidden>
+            <h3>Bring your planner idea to the chat</h3>
+            <p>Copy this starter prompt into the Botpress chat when it is connected.</p>
+            <label for="assistant-prompt">Your conversation starter</label>
+            <textarea id="assistant-prompt" rows="3" readonly></textarea>
+            <div class="form-actions">
+              <button class="button button-secondary button-small" type="button" id="copy-assistant-prompt">Copy prompt</button>
+            </div>
+            <p class="status-message" id="assistant-prompt-message" role="status" aria-live="polite"></p>
+          </div>
           <div class="bot-window" aria-label="Botpress AI assistant integration area">
             <div class="bot-window-header"><span class="bot-dot" aria-hidden="true"></span><span>Creative Companion</span></div>
             <div id="webchat">
@@ -1035,7 +1272,7 @@
           <p class="footer-copy">Less collecting ideas. More creating them.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#home" data-view-link="home">Home</a><a href="#explore" data-view-link="explore">Explore</a><a href="#ideas" data-view-link="ideas">My Ideas</a><a href="#planner" data-view-link="planner">Creative Planner</a><a href="#assistant" data-view-link="assistant">AI Assistant</a>
+          <a href="#home" data-view-link="home">Home</a><a href="#dashboard" data-view-link="dashboard">Dashboard</a><a href="#explore" data-view-link="explore">Explore</a><a href="#ideas" data-view-link="ideas">My Ideas</a><a href="#planner" data-view-link="planner">Creative Planner</a><a href="#assistant" data-view-link="assistant">AI Assistant</a>
         </nav>
       </div>
       <p class="footer-bottom">A student project for ISM 6225. Built to make room for everyday creativity.</p>
@@ -1069,6 +1306,7 @@
     const recommendationMessage = document.querySelector("#recommendation-message");
     let ideas = loadIdeas();
     let currentRecommendation = null;
+    let currentAssistantPrompt = "";
     let currentImages = [];
 
     function loadIdeas() {
@@ -1108,9 +1346,58 @@
       return badge;
     }
 
+    function renderDashboard() {
+      document.querySelector("#dashboard-total").textContent = String(ideas.length);
+      document.querySelector("#dashboard-active").textContent =
+        String(ideas.filter((idea) => idea.status === "In Progress").length);
+      document.querySelector("#dashboard-completed").textContent =
+        String(ideas.filter((idea) => idea.status === "Completed").length);
+
+      const nextUp = document.querySelector("#dashboard-next-up");
+      nextUp.replaceChildren();
+      const readyIdeas = ideas
+        .filter((idea) => idea.status === "Ready to Start" || idea.status === "In Progress")
+        .slice(0, 3);
+
+      if (readyIdeas.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "dashboard-empty";
+        empty.textContent = ideas.length
+          ? "Your next step is waiting to be picked. Mark a project Ready to Start to see it here."
+          : "Your first idea is waiting to be saved. Start with one small thing you would love to make.";
+        nextUp.append(empty);
+        return;
+      }
+
+      readyIdeas.forEach((idea) => {
+        const item = document.createElement("article");
+        item.className = "next-up-item";
+        const text = document.createElement("div");
+        const title = document.createElement("strong");
+        const details = document.createElement("span");
+        title.textContent = idea.title;
+        details.textContent = [idea.category, idea.nextStep || idea.status]
+          .filter(Boolean)
+          .join(" · ");
+        text.append(title, details);
+        const open = document.createElement("button");
+        open.type = "button";
+        open.textContent = "Pick it up";
+        open.addEventListener("click", () => {
+          const project = ideas.find((itemIdea) => itemIdea.id === idea.id);
+          if (!project) return;
+          activateView("ideas", true, true);
+          beginEdit(project);
+        });
+        item.append(text, open);
+        nextUp.append(item);
+      });
+    }
+
     function renderIdeas() {
       ideaList.replaceChildren();
       ideasCount.textContent = `(${ideas.length})`;
+      renderDashboard();
       const selectedStatus = ideaFilter.value;
       const visibleIdeas = ideas.filter((idea) => selectedStatus === "All" || idea.status === selectedStatus);
 
@@ -1427,6 +1714,10 @@
         : availableNow
           ? `This is the closest fit for your ${preferences.time} minutes and ${preferences.energy.toLowerCase()} energy. Make it your own—there is no wrong way to begin.`
           : `This project takes about ${activity.duration} minutes, a little longer than you have right now. Save the idea for a future creative session.`;
+      currentAssistantPrompt = `I have ${preferences.time} minutes and ${preferences.energy.toLowerCase()} energy. I'm interested in ${activity.category.toLowerCase()} and my experience level is ${preferences.experience.toLowerCase()}. I want to try "${activity.title}". Please help me adapt it to my time and energy, then guide me through a simple first step. I may have these materials: ${activity.materials.join(", ")}.`;
+      document.querySelector("#assistant-prompt").value = currentAssistantPrompt;
+      document.querySelector("#assistant-context").hidden = false;
+      document.querySelector("#assistant-prompt-message").textContent = "";
       recommendation.hidden = false;
       recommendation.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
@@ -1471,11 +1762,25 @@
       renderIdeas();
     });
 
+    document.querySelector("#copy-assistant-prompt").addEventListener("click", async () => {
+      const promptInput = document.querySelector("#assistant-prompt");
+      const message = document.querySelector("#assistant-prompt-message");
+      try {
+        await navigator.clipboard.writeText(currentAssistantPrompt);
+        message.textContent = "Prompt copied. Paste it into the Creative Companion chat.";
+      } catch (error) {
+        console.error("Could not copy the assistant conversation starter.", error);
+        promptInput.focus();
+        promptInput.select();
+        message.textContent = "Automatic copying is unavailable here. The prompt is selected—copy it and paste it into the chat.";
+      }
+    });
+
     renderIdeas();
 
     const viewLinks = Array.from(document.querySelectorAll("[data-view-link]"));
     const studioViews = Array.from(document.querySelectorAll("[data-view]"));
-    const viewIds = new Set(["home", "explore", "ideas", "planner", "assistant"]);
+    const viewIds = new Set(["home", "dashboard", "explore", "ideas", "planner", "assistant"]);
 
     function activateView(view, updateHistory = false, focusHeading = false) {
       const selectedView = viewIds.has(view) ? view : "home";
@@ -1509,6 +1814,23 @@
       if (!target || !target.dataset.view) return;
       event.preventDefault();
       activateView(target.dataset.view, true, true);
+    });
+
+    document.querySelectorAll("[data-open-view]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetView = button.dataset.openView;
+        activateView(targetView, true, true);
+        const focusTarget = button.dataset.focus;
+        if (focusTarget) document.getElementById(focusTarget)?.focus();
+      });
+    });
+
+    document.querySelectorAll("[data-inspiration-category]").forEach((tile) => {
+      tile.addEventListener("click", () => {
+        document.querySelector("#interest").value = tile.dataset.inspirationCategory;
+        activateView("planner", true, true);
+        document.querySelector("#time").focus();
+      });
     });
 
     function activateFromHash() {
