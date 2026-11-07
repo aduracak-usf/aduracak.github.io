@@ -1,0 +1,2577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3eb">
+  <meta name="description" content="Find time for painting, sewing, and creative DIY with The Creative Life Studio.">
+  <title>The Creative Life Studio | Make room to create</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #f8f3eb;
+      --paper: #fffdf9;
+      --blush: #e8b9bf;
+      --sage: #a7b8a0;
+      --rose: #a46b78;
+      --charcoal: #403b39;
+      --muted: #716a66;
+      --line: #e6ddd3;
+      --shadow: 0 16px 42px rgb(64 59 57 / 9%);
+      --radius: 22px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--rose);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      z-index: 20;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      transform: translateY(-160%);
+      border-radius: 8px;
+      background: var(--charcoal);
+      color: white;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgb(64 59 57 / 8%);
+      background: rgb(248 243 235 / 94%);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      display: flex;
+      width: min(1160px, calc(100% - 40px));
+      min-height: 76px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--charcoal);
+      font-family: var(--serif);
+      font-size: 1.16rem;
+      font-weight: 700;
+      line-height: 1.15;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--rose);
+      color: white;
+    }
+
+    .brand-mark svg { width: 22px; height: 22px; }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2.2vw, 27px);
+    }
+
+    .main-nav a {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .main-nav a:hover { color: var(--rose); }
+    .main-nav .nav-assistant { color: var(--rose); }
+    .main-nav a[aria-current="page"] {
+      color: var(--rose);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+
+    main { overflow: hidden; }
+    .studio-view[hidden] { display: none; }
+
+    .section-wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 600px;
+      padding: 80px 0;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 82% 46%, rgb(232 185 191 / 42%) 0 19%, transparent 19.3%),
+        radial-gradient(ellipse at 82% 46%, rgb(167 184 160 / 48%) 0 28%, transparent 28.3%),
+        radial-gradient(ellipse at 82% 46%, rgb(255 253 249 / 75%) 0 37%, transparent 37.3%);
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-copy { max-width: 610px; }
+
+    .eyebrow {
+      margin: 0 0 15px;
+      color: var(--rose);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.13;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin-bottom: 20px;
+      font-size: clamp(3rem, 7vw, 5.55rem);
+      letter-spacing: -.045em;
+    }
+
+    .hero-lede {
+      max-width: 540px;
+      margin-bottom: 12px;
+      color: #5e5652;
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+    }
+
+    .hero-tagline {
+      margin-bottom: 28px;
+      color: var(--rose);
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-style: italic;
+    }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      padding: 12px 20px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--rose); color: white; box-shadow: 0 8px 18px rgb(164 107 120 / 20%); }
+    .button-primary:hover { background: #8f5967; }
+    .button-secondary { border-color: #cbbdb2; background: rgb(255 253 249 / 70%); color: var(--charcoal); }
+    .button-secondary:hover { background: white; }
+    .button-small { min-height: 38px; padding: 8px 13px; font-size: .88rem; }
+
+    .hero-note {
+      position: absolute;
+      right: 3%;
+      bottom: 4%;
+      width: 185px;
+      padding: 18px;
+      transform: rotate(4deg);
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: .99rem;
+      text-align: center;
+    }
+
+    .hero-note strong { display: block; color: var(--rose); font-size: 1.1rem; }
+
+    .section {
+      padding: 88px 0;
+      scroll-margin-top: 88px;
+    }
+
+    .view-intro {
+      display: flex;
+      min-height: 170px;
+      padding: 54px 0 35px;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .view-intro h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .view-intro p { max-width: 480px; margin: 0 0 5px; color: var(--muted); }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 13px;
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      letter-spacing: -.025em;
+    }
+
+    .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); }
+
+    .categories-section { background: var(--paper); }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .category-card {
+      min-height: 290px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 8px 24px rgb(64 59 57 / 4%);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .category-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+    .category-art {
+      display: grid;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 21px;
+      place-items: center;
+      border-radius: 23px;
+    }
+
+    .category-art svg { width: 43px; height: 43px; }
+    .art-paint { background: #f4e3df; color: #a46b78; }
+    .art-sew { background: #e9eee5; color: #687e63; }
+    .art-diy { background: #f4ead6; color: #987543; }
+
+    .category-card h3 { margin-bottom: 10px; font-size: 1.55rem; }
+    .category-card p { margin-bottom: 0; color: var(--muted); }
+    .category-card { overflow: hidden; }
+    .category-card .text-button { margin-top: 16px; }
+    .category-illustration {
+      display: grid;
+      height: 142px;
+      margin: -27px -27px 22px;
+      place-items: center;
+      overflow: hidden;
+    }
+    .category-illustration svg { width: 100%; height: 100%; }
+    .illustration-paint { background: #f3e1df; }
+
+    .explore-prompts { margin-top: 54px; }
+    .explore-prompts-heading {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .explore-prompts-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.2rem); }
+    .explore-prompts-heading p { max-width: 520px; margin: 5px 0 0; color: var(--muted); }
+    .explore-filter { width: min(220px, 100%); }
+    .explore-idea-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .explore-idea-card {
+      display: flex;
+      min-height: 100%;
+      padding: 21px;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+    }
+    .explore-idea-card h3 { margin: 12px 0 7px; font-family: var(--serif); font-size: 1.3rem; }
+    .explore-idea-card p { margin: 0; color: var(--muted); }
+    .explore-idea-card .idea-meta { margin-bottom: 10px; }
+    .explore-idea-card .explore-idea-details { margin-top: 14px; font-size: .88rem; }
+    .explore-idea-card .explore-idea-details strong { color: var(--charcoal); }
+    .explore-idea-actions { display: flex; margin-top: auto; padding-top: 17px; flex-wrap: wrap; gap: 8px; }
+    .explore-idea-actions .button { min-height: 40px; }
+    .explore-idea-status { min-height: 1.4em; margin: 9px 0 0 !important; color: var(--rose) !important; font-size: .85rem; font-weight: 650; }
+    .illustration-sew { background: #e8eee5; }
+    .illustration-diy { background: #f4ead6; }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .intro-panel {
+      position: sticky;
+      top: 110px;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: #e9eee5;
+    }
+
+    .intro-panel h2 { margin-bottom: 14px; font-size: clamp(2rem, 3.8vw, 2.75rem); }
+    .intro-panel p { margin-bottom: 0; color: #5b6258; }
+
+    .panel {
+      padding: clamp(22px, 4vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 30px rgb(64 59 57 / 5%);
+    }
+
+    .panel h3 { margin-bottom: 7px; font-size: 1.55rem; }
+    .panel-description { margin-bottom: 24px; color: var(--muted); font-size: .95rem; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field { display: grid; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+
+    label, legend {
+      color: var(--charcoal);
+      font-size: .91rem;
+      font-weight: 700;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d5ccc3;
+      border-radius: 11px;
+      background: white;
+      color: var(--charcoal);
+    }
+
+    input, select { min-height: 46px; }
+    textarea { min-height: 88px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #918781; }
+    input:focus, select:focus, textarea:focus { border-color: var(--rose); outline: 2px solid rgb(164 107 120 / 18%); }
+
+    .form-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 19px; }
+
+    .status-message {
+      min-height: 1.5em;
+      margin: 14px 0 0;
+      color: var(--rose);
+      font-size: .91rem;
+      font-weight: 650;
+    }
+
+    .idea-toolbar {
+      display: flex;
+      margin: 30px 0 17px;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .idea-toolbar h3 { margin: 0; }
+    .filter-field { width: min(220px, 48%); }
+
+    .idea-list { display: grid; gap: 13px; }
+
+    .idea-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+    }
+
+    .idea-card h4 { margin: 0 0 7px; font-family: var(--serif); font-size: 1.3rem; }
+    .idea-description { margin: 13px 0 0; color: #5f5752; }
+    .idea-extra {
+      display: grid;
+      margin-top: 13px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+    .idea-extra div { padding: 11px 12px; border-radius: 11px; background: #f7f2ec; }
+    .idea-extra strong { display: block; margin-bottom: 3px; font-size: .79rem; }
+    .idea-extra span { color: var(--muted); font-size: .86rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .idea-images { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .idea-images img { width: 84px; height: 84px; border: 1px solid var(--line); border-radius: 10px; object-fit: cover; }
+    .image-picker {
+      padding: 13px;
+      border: 1px dashed #cbbdb2;
+      border-radius: 12px;
+      background: #fbf8f3;
+    }
+    .image-picker input { padding: 7px; }
+    .image-preview-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 11px; }
+    .image-preview-item { position: relative; }
+    .image-preview-item img { width: 75px; height: 75px; border-radius: 9px; object-fit: cover; }
+    .image-preview-item button {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: white;
+      cursor: pointer;
+    }
+    .idea-meta { display: flex; flex-wrap: wrap; gap: 7px; color: var(--muted); font-size: .82rem; }
+
+    .badge {
+      display: inline-flex;
+      padding: 3px 9px;
+      align-items: center;
+      border-radius: 999px;
+      background: #f2ece5;
+      color: #625a55;
+      font-weight: 650;
+    }
+
+    .idea-actions { display: flex; align-items: center; gap: 8px; }
+    .text-button {
+      padding: 6px 9px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--rose);
+      cursor: pointer;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .text-button:hover { background: #f8edf0; }
+    .text-button.delete { color: #86515b; }
+    .empty-state { padding: 25px 16px; border: 1px dashed #cbbdb2; border-radius: 14px; color: var(--muted); text-align: center; }
+    .storage-note { margin: 15px 0 0; color: var(--muted); font-size: .82rem; }
+    .ideas-layout { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 30px; align-items: start; }
+    .ideas-form-panel { position: sticky; top: 110px; }
+    .ideas-count { color: var(--muted); font-size: .88rem; }
+
+    .planner-section { background: #f1e9e3; }
+    .planner-form { margin-bottom: 24px; }
+
+    .recommendation {
+      padding: clamp(23px, 4vw, 34px);
+      border: 1px solid rgb(164 107 120 / 22%);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .recommendation[hidden] { display: none; }
+    .recommendation-label { margin-bottom: 7px; color: var(--rose); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .recommendation h3 { margin-bottom: 10px; font-size: clamp(1.75rem, 3vw, 2.35rem); }
+    .recommendation p { color: #5f5752; }
+
+    .recommendation-details {
+      display: grid;
+      margin: 20px 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .detail-box { padding: 16px; border-radius: 13px; background: #f7f2ec; }
+    .detail-box h4 { margin: 0 0 8px; font-size: .9rem; }
+    .detail-box p, .detail-box ol { margin: 0; color: var(--muted); font-size: .9rem; }
+    .detail-box ol { padding-left: 19px; }
+    .fit-note { margin: 14px 0 0; padding: 12px 14px; border-radius: 11px; background: #e9eee5; color: #4f5c4a !important; font-size: .9rem; }
+
+    .assistant-section { background: var(--paper); }
+
+    .assistant-card {
+      display: grid;
+      padding: clamp(25px, 5vw, 48px);
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 35px;
+      align-items: center;
+      border-radius: 30px;
+      background: #e9eee5;
+    }
+
+    .assistant-card h2 { margin-bottom: 13px; font-size: clamp(2rem, 4vw, 3rem); }
+    .assistant-card p { color: #5d6459; }
+    .assistant-list { display: grid; margin: 20px 0 0; padding: 0; gap: 10px; list-style: none; }
+    .assistant-list li { display: flex; align-items: flex-start; gap: 10px; }
+    .assistant-list li::before { content: "✦"; color: var(--rose); font-weight: 800; }
+
+    .bot-window {
+      min-height: 325px;
+      overflow: hidden;
+      border: 1px solid #ded5cb;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 14px 32px rgb(64 59 57 / 10%);
+    }
+
+    .bot-window-header {
+      display: flex;
+      min-height: 58px;
+      padding: 12px 17px;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 750;
+    }
+
+    .bot-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--sage); }
+
+    #webchat {
+      display: grid;
+      min-height: 265px;
+      padding: 24px;
+      place-items: center;
+      text-align: center;
+    }
+
+    .bot-placeholder { max-width: 340px; }
+    .bot-placeholder-icon { margin-bottom: 9px; color: var(--rose); font-size: 2rem; }
+    .bot-placeholder h3 { margin-bottom: 8px; font-size: 1.35rem; }
+    .bot-placeholder p { margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+    .embed-instructions { margin: 18px 0 0; color: #6a625d; font-size: .82rem; }
+    .embed-instructions code { padding: 2px 5px; border-radius: 5px; background: #f2ece5; }
+
+    .about-section { background: var(--cream); }
+    .about-quote {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: clamp(27px, 5vw, 48px);
+      border-left: 4px solid var(--rose);
+      border-radius: 0 20px 20px 0;
+      background: var(--paper);
+      box-shadow: 0 8px 25px rgb(64 59 57 / 5%);
+      color: #5d5550;
+      font-family: var(--serif);
+      font-size: clamp(1.28rem, 2.6vw, 1.8rem);
+      line-height: 1.55;
+    }
+
+    .quote-studio {
+      position: relative;
+      display: grid;
+      min-height: 235px;
+      padding: clamp(28px, 5vw, 52px);
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #e9eee5;
+    }
+    .quote-studio blockquote {
+      max-width: 760px;
+      margin: 0;
+      color: #4b5148;
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.4;
+    }
+    .quote-studio cite { display: block; margin-top: 14px; color: var(--rose); font-family: var(--sans); font-size: .83rem; font-style: normal; font-weight: 750; }
+    .quote-mark { color: var(--sage); font-family: var(--serif); font-size: 8rem; line-height: .65; opacity: .8; }
+    .quote-controls { display: flex; margin-top: 20px; align-items: center; gap: 10px; }
+    .quote-controls button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid #bdc9b8;
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--charcoal);
+      cursor: pointer;
+    }
+    .quote-controls span { color: var(--muted); font-size: .83rem; }
+    .roadmap-grid { display: grid; margin-top: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .roadmap-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+    .roadmap-card h3 { margin-bottom: 7px; font-size: 1.25rem; }
+    .roadmap-card p { margin-bottom: 12px; color: var(--muted); font-size: .9rem; }
+    .future-badge { display: inline-flex; padding: 4px 9px; border-radius: 999px; background: #f2e7d6; color: #765a31; font-size: .73rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .quote-and-roadmap { padding-top: 35px; }
+    .studio-about-quote { margin-top: 28px; }
+    .why-create { margin-top: 42px; }
+    .why-create h3 { margin-bottom: 17px; font-size: 1.65rem; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .benefit-card { padding: 19px; border-radius: 15px; background: var(--paper); }
+    .benefit-card span { display: block; margin-bottom: 8px; color: var(--rose); font-size: 1.25rem; }
+    .benefit-card strong { display: block; margin-bottom: 4px; font-family: var(--serif); font-size: 1.1rem; font-weight: 600; }
+    .benefit-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .studio-dashboard { background: var(--paper); }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .stat-card { display: grid; min-height: 145px; padding: 21px; align-content: start; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .stat-card span { color: var(--muted); font-size: .84rem; font-weight: 650; }
+    .stat-card strong { margin: 7px 0 1px; color: var(--rose); font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1.15; }
+    .stat-card a { color: var(--rose); font-size: .82rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .stat-card p { margin: 4px 0 0; color: var(--muted); font-size: .82rem; }
+    .dashboard-grid { display: grid; margin-top: 20px; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); gap: 18px; }
+    .dashboard-panel { min-height: 230px; padding: clamp(22px, 4vw, 32px); border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+    .dashboard-accent { background: #e9eee5; }
+    .dashboard-panel h2, .panel h2, .progress-panel h2 { margin-bottom: 10px; font-size: clamp(1.6rem, 3vw, 2.15rem); }
+    .dashboard-subheading { margin: 22px 0 4px; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; }
+    .dashboard-panel > p:not(.eyebrow) { color: #5d6459; }
+    .panel-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .panel-topline h2 { margin-bottom: 0; }
+    .panel-topline .eyebrow { margin-bottom: 8px; }
+    .text-link { color: var(--rose); font-size: .87rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .dashboard-list { display: grid; gap: 12px; }
+    .dashboard-row { display: flex; padding: 13px 0; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid var(--line); }
+    .dashboard-row:last-child { border-bottom: 0; }
+    .dashboard-row strong { display: block; font-family: var(--serif); font-size: 1.12rem; font-weight: 600; }
+    .dashboard-row span { color: var(--muted); font-size: .84rem; }
+    .dashboard-row a { flex: 0 0 auto; color: var(--rose); font-size: .83rem; font-weight: 700; }
+    .workspace-section { background: #f1e9e3; }
+    .workspace-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 22px; align-items: start; }
+    .workspace-layout > .panel { min-width: 0; }
+    .workspace-layout > .panel h2 { margin-top: 0; }
+    .project-list { display: grid; margin-top: 20px; gap: 14px; }
+    .project-card { padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .project-card h3 { margin: 0; font-size: 1.42rem; }
+    .project-description { margin: 12px 0; color: #5f5752; }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .project-meta { display: flex; flex-wrap: wrap; margin-top: 8px; gap: 7px; color: var(--muted); font-size: .8rem; }
+    .project-progress { margin: 15px 0; }
+    .project-progress-label { display: flex; margin-bottom: 5px; justify-content: space-between; color: var(--muted); font-size: .8rem; }
+    .progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: #eee7df; }
+    .progress-fill { height: 100%; border-radius: inherit; background: var(--sage); transition: width .2s ease; }
+    .project-detail { margin-top: 13px; padding: 12px; border-radius: 11px; background: #f7f2ec; }
+    .project-detail strong { display: block; margin-bottom: 5px; font-size: .83rem; }
+    .project-detail p { margin: 0; color: var(--muted); font-size: .87rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .project-detail summary { cursor: pointer; font-size: .85rem; font-weight: 700; }
+    .project-detail ol { padding-left: 20px; }
+    .project-task-list { display: grid; margin: 8px 0 0; padding: 0; gap: 8px; list-style: none; }
+    .project-task-list label { display: flex; align-items: flex-start; gap: 9px; font-size: .87rem; font-weight: 500; }
+    .project-task-list input { width: 18px; min-height: 18px; height: 18px; margin: 2px 0 0; flex: 0 0 auto; accent-color: var(--rose); }
+    .task-complete { color: var(--muted); text-decoration: line-through; }
+    .project-actions { display: flex; margin-top: 13px; flex-wrap: wrap; gap: 7px; }
+    .task-form { display: grid; margin: 18px 0 8px; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end; }
+    .task-form .button { margin-bottom: 1px; }
+    .empty-state.compact { padding: 18px; }
+    .boards-section { background: var(--paper); }
+    .boards-section .workspace-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+    .palette-input { height: 48px; padding: 5px; cursor: pointer; }
+    .board-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .board-card { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .board-card h3 { margin-bottom: 5px; font-size: 1.28rem; overflow-wrap: anywhere; }
+    .board-category { color: var(--muted); font-size: .8rem; }
+    .palette-swatches { display: grid; height: 56px; margin: 15px 0 10px; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid rgb(64 59 57 / 10%); border-radius: 11px; }
+    .palette-swatches span { display: grid; place-items: end center; padding-bottom: 4px; color: #403b39; font-size: .67rem; text-shadow: 0 1px 5px #fff; }
+    .board-notes { margin: 11px 0 0; color: #5f5752; font-size: .89rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .board-reference { display: inline-block; margin-top: 10px; color: var(--rose); font-size: .85rem; font-weight: 700; }
+    .schedule-section { background: #f1e9e3; }
+    .session-list { display: grid; gap: 12px; }
+    .session-card { display: grid; padding: 16px; grid-template-columns: 1fr auto; gap: 10px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .session-card h3 { margin: 0 0 5px; font-size: 1.2rem; }
+    .session-card p { margin: 4px 0 0; color: var(--muted); font-size: .86rem; white-space: pre-wrap; }
+    .session-date { color: var(--rose); font-size: .83rem; font-weight: 750; }
+    .session-card button { align-self: start; }
+    .progress-section { background: var(--paper); }
+    .progress-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .progress-panel { margin-top: 20px; }
+    .status-message:empty { display: none; }
+
+    .site-footer { padding: 43px 0 25px; background: var(--charcoal); color: #f8f3eb; }
+    .footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; }
+    .footer-brand { margin-bottom: 7px; color: white; font-family: var(--serif); font-size: 1.35rem; }
+    .footer-copy { margin: 0; color: #d3c9c1; font-size: .92rem; }
+    .footer-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 16px; }
+    .footer-nav a { color: #f1e8e1; font-size: .88rem; text-decoration: none; }
+    .footer-nav a:hover { text-decoration: underline; }
+    .footer-bottom { margin: 27px 0 0; padding-top: 18px; border-top: 1px solid rgb(255 255 255 / 15%); color: #c9beb6; font-size: .8rem; }
+
+    @media (max-width: 820px) {
+      .header-inner { padding: 13px 0; align-items: flex-start; flex-direction: column; gap: 11px; }
+      .main-nav { width: 100%; justify-content: flex-start; overflow-x: auto; padding: 1px 0 5px; }
+      .main-nav a { flex: 0 0 auto; }
+      .hero { min-height: 570px; background-position: center; }
+      .hero-note { right: 0; bottom: -55px; }
+      .section { padding: 70px 0; scroll-margin-top: 125px; }
+      .category-grid { grid-template-columns: 1fr; }
+      .category-card { min-height: auto; }
+      .explore-idea-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .explore-prompts-heading { align-items: flex-start; flex-direction: column; }
+      .two-column { grid-template-columns: 1fr; }
+      .intro-panel { position: static; }
+      .assistant-card { grid-template-columns: 1fr; }
+      .view-intro { align-items: flex-start; flex-direction: column; }
+      .ideas-layout { grid-template-columns: 1fr; }
+      .ideas-form-panel { position: static; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dashboard-grid, .workspace-layout, .boards-section .workspace-layout { grid-template-columns: 1fr; }
+      .task-form { grid-template-columns: 1fr; }
+      .board-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      .header-inner, .section-wrap, .hero-inner { width: min(100% - 30px, 1080px); }
+      .brand { font-size: 1.05rem; }
+      .hero { min-height: 620px; padding: 62px 0 95px; background-size: 145% auto; background-position: 67% 67%; }
+      .hero-copy { max-width: 100%; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4rem); }
+      .hero-note { right: 3px; bottom: -76px; width: 150px; padding: 12px; font-size: .87rem; }
+      .button-row { align-items: stretch; flex-direction: column; }
+      .button-row .button { width: 100%; }
+      .section { padding: 60px 0; }
+      .form-grid, .recommendation-details { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .idea-toolbar { align-items: stretch; flex-direction: column; }
+      .filter-field { width: 100%; }
+      .idea-card { grid-template-columns: 1fr; }
+      .idea-actions { justify-content: flex-start; }
+      .idea-extra { grid-template-columns: 1fr; }
+      .explore-idea-grid { grid-template-columns: 1fr; }
+      .stat-grid, .progress-stats { grid-template-columns: 1fr 1fr; }
+      .stat-card { min-height: 125px; padding: 16px; }
+      .dashboard-row { align-items: flex-start; flex-direction: column; }
+      .project-header { flex-direction: column; }
+      .session-card { grid-template-columns: 1fr; }
+      .quote-studio { grid-template-columns: 1fr; }
+      .quote-mark { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-nav { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="The Creative Life Studio home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 20s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 10c0 5.65-7 10-7 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m9.2 12.2 1.7 1.7 4-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>The Creative Life Studio</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-view-link="home" aria-current="page">Home</a>
+        <a href="#explore" data-view-link="explore">Explore</a>
+        <a href="#studio" data-view-link="studio">My Studio</a>
+        <a href="#ideas" data-view-link="ideas">My Ideas</a>
+        <a href="#workspace" data-view-link="workspace">Projects</a>
+        <a href="#boards" data-view-link="boards">Boards</a>
+        <a href="#planner" data-view-link="planner">Creative Planner</a>
+        <a href="#schedule" data-view-link="schedule">Sessions</a>
+        <a href="#progress" data-view-link="progress">Progress</a>
+        <a class="nav-assistant" href="#assistant" data-view-link="assistant">AI Assistant</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero studio-view" id="home" data-view="home" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">A little space for your creativity</p>
+          <h1 id="hero-title">Make room for the things you love to create.</h1>
+          <p class="hero-lede">Your personal creative space for discovering ideas, planning projects, and finding little moments to make something beautiful.</p>
+          <p class="hero-tagline">Your ideas. Your energy. Your schedule. Your creative space.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#planner">Find Your Creative Moment <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#explore">Explore Creative Ideas</a>
+            <a class="button button-secondary" href="#studio">Open My Studio</a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="Studio reminder">
+          <strong>Less collecting ideas.</strong>
+          More creating them.
+        </aside>
+      </div>
+    </section>
+
+    <section class="section studio-dashboard studio-view" id="studio" data-view="studio" aria-labelledby="studio-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">Your creative space</p>
+            <h1 id="studio-title">A studio that meets you where you are.</h1>
+          </div>
+          <p>Your saved ideas stay in this browser. Pick up a project, plan a small session, or simply notice what is already in motion.</p>
+        </div>
+        <p class="status-message" id="studio-message" role="status" aria-live="polite"></p>
+        <div class="stat-grid" aria-label="Your studio at a glance">
+          <article class="stat-card"><span>Ideas saved</span><strong id="stat-ideas">0</strong><a href="#ideas">Visit your parking lot</a></article>
+          <article class="stat-card"><span>Active projects</span><strong id="stat-active-projects">0</strong><a href="#workspace">Open project workspace</a></article>
+          <article class="stat-card"><span>Next actions</span><strong id="stat-next-actions">0</strong><a href="#workspace">Choose a small step</a></article>
+          <article class="stat-card"><span>Projects completed</span><strong id="stat-completed-projects">0</strong><a href="#progress">See your progress</a></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-panel">
+            <div class="panel-topline"><div><p class="eyebrow">A gentle next step</p><h2>Pick up where you left off</h2></div><a class="text-link" href="#workspace">All projects →</a></div>
+            <div id="dashboard-projects" class="dashboard-list"></div>
+            <h3 class="dashboard-subheading">Coming up</h3>
+            <div id="dashboard-sessions" class="dashboard-list"></div>
+          </article>
+          <article class="dashboard-panel dashboard-accent">
+            <p class="eyebrow">Make a little room</p>
+            <h2>What would feel good today?</h2>
+            <p>Choose an activity by the time and energy you actually have—not the time you wish you had.</p>
+            <a class="button button-primary button-small" href="#planner">Find a creative moment</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section categories-section studio-view" id="explore" data-view="explore" aria-labelledby="explore-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">Choose your creative corner</p>
+            <h1 id="explore-title">What would you love to make?</h1>
+          </div>
+          <p>Follow a curiosity, try a new technique, or simply begin with what you have nearby.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-illustration illustration-paint" aria-hidden="true">
+              <svg viewBox="0 0 360 150" fill="none">
+                <circle cx="72" cy="39" r="25" fill="#E8B9BF"/>
+                <path d="M45 119c18-26 34-28 52-6 15-35 42-38 62-4 22-31 45-30 65 4 25-42 55-42 86 6H45Z" fill="#A7B8A0"/>
+                <path d="M121 97c-14-35-6-61 20-70 25-8 43 7 45 32 2 24-19 48-38 56" fill="#A46B78"/>
+                <path d="M122 91c15-6 33-11 53-11" stroke="#F8F3EB" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="244" cy="43" r="8" fill="#A46B78"/><circle cx="265" cy="62" r="5" fill="#E8B9BF"/><path d="M290 24v24m-12-12h24" stroke="#A46B78" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Painting</h3>
+            <p>Discover painting prompts, color palettes, techniques, and inspiration for your next canvas or sketchbook page.</p>
+            <button class="text-button" type="button" data-explore-filter="Painting">Browse painting ideas →</button>
+          </article>
+          <article class="category-card">
+            <div class="category-illustration illustration-sew" aria-hidden="true">
+              <svg viewBox="0 0 360 150" fill="none">
+                <path d="M104 27h151l24 28v73H80V55l24-28Z" fill="#E8B9BF"/>
+                <path d="M111 27 80 55h199l-24-28H111Z" fill="#A46B78" opacity=".8"/>
+                <path d="m177 36 42 79m-1-79-42 79" stroke="#F8F3EB" stroke-width="6" stroke-dasharray="3 9" stroke-linecap="round"/>
+                <path d="M74 46 56 34m224 17 20-18" stroke="#A46B78" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="89" cy="116" r="7" fill="#A7B8A0"/><circle cx="257" cy="113" r="9" fill="#A7B8A0"/>
+              </svg>
+            </div>
+            <h3>Sewing</h3>
+            <p>Explore beginner sewing projects, fabric combinations, and practical guidance for making something useful and lovely.</p>
+            <button class="text-button" type="button" data-explore-filter="Sewing">Browse sewing ideas →</button>
+          </article>
+          <article class="category-card">
+            <div class="category-illustration illustration-diy" aria-hidden="true">
+              <svg viewBox="0 0 360 150" fill="none">
+                <path d="m168 15 14 35 36 14-36 14-14 37-14-37-36-14 36-14 14-35Z" fill="#E8B9BF"/>
+                <path d="m251 45 9 23 24 9-24 9-9 24-9-24-24-9 24-9 9-23Z" fill="#A46B78"/>
+                <path d="m99 70 7 17 18 7-18 7-7 18-7-18-18-7 18-7 7-17Z" fill="#A7B8A0"/>
+                <circle cx="302" cy="35" r="5" fill="#A46B78"/><circle cx="57" cy="44" r="5" fill="#A46B78"/>
+              </svg>
+            </div>
+            <h3>Creative DIY</h3>
+            <p>Find approachable craft projects, creative challenges, and fresh ideas for making more with the materials you have.</p>
+            <button class="text-button" type="button" data-explore-filter="DIY">Browse DIY ideas →</button>
+          </article>
+        </div>
+        <div class="explore-prompts">
+          <div class="explore-prompts-heading">
+            <div>
+              <p class="eyebrow">A few ways to begin</p>
+              <h2>Small ideas, ready when you are</h2>
+              <p>Save a prompt for later, or turn it into a project workspace with a first step and materials to gather.</p>
+            </div>
+            <div class="field explore-filter">
+              <label for="explore-category-filter">Show ideas for</label>
+              <select id="explore-category-filter">
+                <option value="All">All creative areas</option>
+                <option value="Painting">Painting</option>
+                <option value="Sewing">Sewing</option>
+                <option value="Fabric">Fabric</option>
+                <option value="DIY">Creative DIY</option>
+              </select>
+            </div>
+          </div>
+          <div id="explore-idea-list" class="explore-idea-grid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workspace-section studio-view" id="workspace" data-view="workspace" aria-labelledby="workspace-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">From idea to making</p>
+            <h1 id="workspace-title">Your project workspace</h1>
+          </div>
+          <p>Turn an idea into a project, keep the materials and next steps together, and mark progress as it happens.</p>
+        </div>
+        <div class="workspace-layout">
+          <div class="panel">
+            <h2>Create a project</h2>
+            <p class="panel-description">A project plan is saved only in this browser on this device.</p>
+            <form id="project-form">
+              <div class="form-grid">
+                <div class="field field-full"><label for="project-title">Project title</label><input id="project-title" maxlength="100" required placeholder="A quilted fabric coaster"></div>
+                <div class="field field-full"><label for="project-description">Description</label><textarea id="project-description" maxlength="500" rows="3" placeholder="What are you hoping to make?"></textarea></div>
+                <div class="field"><label for="project-category">Category</label><select id="project-category"><option>Painting</option><option>Sewing</option><option>Fabric</option><option>DIY</option></select></div>
+                <div class="field"><label for="project-skill">Skill level</label><select id="project-skill"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+                <div class="field"><label for="project-duration">Estimated active minutes</label><input id="project-duration" type="number" min="5" max="600" step="5" value="30" required></div>
+                <div class="field"><label for="project-energy">Energy requirement</label><select id="project-energy"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+                <div class="field field-full"><label for="project-materials">Materials (one per line)</label><textarea id="project-materials" rows="3" maxlength="700" placeholder="Cotton fabric&#10;Thread&#10;Scissors" required></textarea></div>
+                <div class="field field-full"><label for="project-steps">Ordered project steps (one per line)</label><textarea id="project-steps" rows="4" maxlength="1200" placeholder="Choose two compatible fabrics&#10;Cut the project pieces&#10;Sew a test seam on scraps" required></textarea></div>
+                <div class="field field-full"><label for="project-milestones">Milestones (optional, one per line)</label><textarea id="project-milestones" rows="2" maxlength="500" placeholder="First test piece finished&#10;Final piece completed"></textarea></div>
+              </div>
+              <div class="form-actions"><button class="button button-primary" type="submit">Create project</button></div>
+              <p class="status-message" id="workspace-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="panel">
+            <div class="panel-topline"><div><p class="eyebrow">Make progress at your pace</p><h2>Your projects <span class="ideas-count" id="project-count"></span></h2></div></div>
+            <form id="task-form" class="task-form">
+              <div class="field"><label for="task-project">Add a task to</label><select id="task-project" required><option value="">Choose a project</option></select></div>
+              <div class="field"><label for="task-title">Next task</label><input id="task-title" maxlength="160" placeholder="Lay out the fabric pieces" required></div>
+              <button class="button button-secondary button-small" type="submit">Add task</button>
+            </form>
+            <div id="project-list" class="project-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section studio-view" id="ideas" data-view="ideas" aria-labelledby="ideas-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">Keep the spark</p>
+            <h1 id="ideas-title">Your Creative Parking Lot</h1>
+          </div>
+          <p>Turn passing inspiration into a project you can return to, with notes, materials, and reference images.</p>
+        </div>
+        <div class="ideas-layout">
+          <div class="panel ideas-form-panel">
+            <h3 id="idea-form-heading">Add a project</h3>
+            <p class="panel-description">Capture enough detail that future-you can pick up where you left off.</p>
+            <form id="idea-form">
+              <input type="hidden" id="idea-id">
+              <div class="form-grid">
+                <div class="field field-full">
+                  <label for="idea-title">Project title</label>
+                  <input id="idea-title" name="title" type="text" maxlength="100" placeholder="A tiny painted flower study" required>
+                </div>
+                <div class="field field-full">
+                  <label for="idea-description">What do you want to make?</label>
+                  <textarea id="idea-description" name="description" rows="3" maxlength="500" placeholder="Describe the idea, inspiration, or finished piece you have in mind."></textarea>
+                </div>
+                <div class="field">
+                  <label for="idea-category">Category</label>
+                  <select id="idea-category" name="category" required>
+                    <option value="Painting">Painting</option>
+                    <option value="Sewing">Sewing</option>
+                    <option value="DIY">DIY</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="idea-time">Time estimate</label>
+                  <select id="idea-time" name="time">
+                    <option value="">Not sure yet</option>
+                    <option value="5 minutes">5 minutes</option>
+                    <option value="15 minutes">15 minutes</option>
+                    <option value="30 minutes">30 minutes</option>
+                    <option value="1 hour">1 hour</option>
+                    <option value="A few sessions">A few sessions</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="idea-status">Status</label>
+                  <select id="idea-status" name="status" required>
+                    <option value="Someday">Someday</option>
+                    <option value="Ready to Start">Ready to Start</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="idea-next-step">Next small step</label>
+                  <input id="idea-next-step" name="nextStep" type="text" maxlength="160" placeholder="Gather a few fabric scraps">
+                </div>
+                <div class="field field-full">
+                  <label for="idea-materials">Materials to gather</label>
+                  <textarea id="idea-materials" name="materials" rows="2" maxlength="300" placeholder="List supplies, separated by commas"></textarea>
+                </div>
+                <div class="field field-full">
+                  <label for="idea-notes">Personal notes</label>
+                  <textarea id="idea-notes" name="notes" rows="3" maxlength="500" placeholder="Color ideas, who it is for, things to remember…"></textarea>
+                </div>
+                <div class="field field-full image-picker">
+                  <label for="idea-images">Reference images (up to 3)</label>
+                  <input id="idea-images" name="images" type="file" accept="image/*" multiple>
+                  <p class="storage-note">Images stay in this browser on this device. Choose small reference images to help keep your browser storage available.</p>
+                  <div class="image-preview-list" id="image-preview-list" aria-live="polite"></div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button button-primary" type="submit" id="idea-submit">Save Idea</button>
+                <button class="button button-secondary" type="button" id="idea-cancel" hidden>Cancel edit</button>
+              </div>
+              <p class="status-message" id="idea-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div>
+            <div class="idea-toolbar">
+              <h3>Saved projects <span class="ideas-count" id="ideas-count"></span></h3>
+              <div class="field filter-field">
+                <label for="status-filter">Filter by status</label>
+                <select id="status-filter">
+                  <option value="All">All projects</option>
+                  <option value="Someday">Someday</option>
+                  <option value="Ready to Start">Ready to Start</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+            <div id="idea-list" class="idea-list" aria-live="polite"></div>
+            <p class="storage-note">Project details and reference images are saved only in this browser on this device. They do not sync across devices. Optional Box storage for the creator’s personal prototype is a future feature and will not be required for visitors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section planner-section studio-view" id="planner" data-view="planner" aria-labelledby="planner-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div>
+            <p class="eyebrow">Make today yours</p>
+            <h1 id="planner-title">Find your creative moment</h1>
+          </div>
+          <p>Tell us what you have to work with. The planner will always offer a practical idea matched as closely as possible to your time, energy, interest, and experience.</p>
+        </div>
+        <form class="panel planner-form" id="planner-form">
+          <div class="form-grid">
+            <div class="field">
+              <label for="energy">What is your energy level?</label>
+              <select id="energy" name="energy" required>
+                <option value="Low">Low</option><option value="Medium" selected>Medium</option><option value="High">High</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="time">How much time do you have?</label>
+              <select id="time" name="time" required>
+                <option value="5">5 minutes</option><option value="15" selected>15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="interest">What are you interested in?</label>
+              <select id="interest" name="interest" required>
+                <option value="Painting">Painting</option><option value="Sewing">Sewing</option><option value="DIY">DIY</option><option value="Surprise Me" selected>Surprise Me</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="experience">What is your experience level?</label>
+              <select id="experience" name="experience" required>
+                <option value="Beginner">Beginner</option><option value="Intermediate" selected>Intermediate</option><option value="Advanced">Advanced</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Find My Creative Moment</button>
+          </div>
+        </form>
+        <article class="recommendation" id="recommendation" aria-live="polite" hidden>
+          <p class="recommendation-label" id="recommendation-label">Your creative moment</p>
+          <h3 id="recommendation-title"></h3>
+          <p id="recommendation-description"></p>
+          <div class="recommendation-details">
+            <div class="detail-box">
+              <h4>Time &amp; materials</h4>
+              <p id="recommendation-time"></p>
+              <p id="recommendation-materials"></p>
+            </div>
+            <div class="detail-box">
+              <h4>Your first three steps</h4>
+              <ol id="recommendation-steps"></ol>
+            </div>
+          </div>
+          <button class="button button-secondary button-small" type="button" id="save-recommendation">Save to My Ideas</button>
+          <p class="status-message" id="recommendation-message" role="status" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section boards-section studio-view" id="boards" data-view="boards" aria-labelledby="boards-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div><p class="eyebrow">Collect colors and references</p><h1 id="boards-title">Inspiration boards</h1></div>
+          <p>Gather a few visual ideas, palette colors, and notes for the creative direction you want to explore.</p>
+        </div>
+        <div class="workspace-layout">
+          <div class="panel">
+            <h2>Start a board</h2>
+            <form id="board-form">
+              <div class="form-grid">
+                <div class="field field-full"><label for="board-title">Board name</label><input id="board-title" maxlength="80" required placeholder="Soft garden palette"></div>
+                <div class="field"><label for="board-category">Creative area</label><select id="board-category"><option>Painting</option><option>Sewing</option><option>Fabric</option><option>DIY</option><option>Mixed media</option></select></div>
+                <div class="field"><label for="board-reference">Reference image link (optional)</label><input id="board-reference" type="url" maxlength="500" placeholder="https://example.com/image"></div>
+                <div class="field"><label for="board-color-one">Palette color one</label><input class="palette-input" id="board-color-one" type="color" value="#a7b8a0"></div>
+                <div class="field"><label for="board-color-two">Palette color two</label><input class="palette-input" id="board-color-two" type="color" value="#e8b9bf"></div>
+                <div class="field"><label for="board-color-three">Palette color three</label><input class="palette-input" id="board-color-three" type="color" value="#f8f3eb"></div>
+                <div class="field field-full"><label for="board-notes">Notes</label><textarea id="board-notes" maxlength="500" rows="3" placeholder="What do you like about these colors or references?"></textarea></div>
+              </div>
+              <div class="form-actions"><button class="button button-primary" type="submit">Save inspiration board</button></div>
+              <p class="status-message" id="board-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div id="board-list" class="board-grid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section schedule-section studio-view" id="schedule" data-view="schedule" aria-labelledby="schedule-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div><p class="eyebrow">Make space by hand</p><h1 id="schedule-title">Your creative sessions</h1></div>
+          <p>Plan a session around your real week. These entries are stored in this browser only; this planner does not read or update Google Calendar.</p>
+        </div>
+        <div class="workspace-layout">
+          <div class="panel">
+            <h2>Plan a session</h2>
+            <form id="session-form">
+              <div class="form-grid">
+                <div class="field field-full"><label for="session-project">Project (optional)</label><select id="session-project"><option value="">Independent creative time</option></select></div>
+                <div class="field"><label for="session-start">Date and time</label><input id="session-start" type="datetime-local" required></div>
+                <div class="field"><label for="session-duration">Available time</label><select id="session-duration"><option value="5">5 minutes</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option><option value="90">90 minutes</option></select></div>
+                <div class="field"><label for="session-energy">Energy level</label><select id="session-energy"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+                <div class="field field-full"><label for="session-notes">A gentle plan for this time</label><textarea id="session-notes" maxlength="300" rows="3" placeholder="Set out your paper and make three color swatches"></textarea></div>
+              </div>
+              <div class="form-actions"><button class="button button-primary" type="submit">Add creative session</button></div>
+              <p class="status-message" id="schedule-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="panel"><p class="eyebrow">Your own plan</p><h2>Upcoming sessions</h2><div id="session-list" class="session-list" aria-live="polite"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section progress-section studio-view" id="progress" data-view="progress" aria-labelledby="progress-title">
+      <div class="section-wrap">
+        <div class="view-intro">
+          <div><p class="eyebrow">Notice what you have made</p><h1 id="progress-title">Progress, without pressure</h1></div>
+          <p>Small steps count. These simple indicators are calculated from the projects and tasks you track in this browser.</p>
+        </div>
+        <div class="stat-grid progress-stats" aria-label="Creative progress totals">
+          <article class="stat-card"><span>Completed projects</span><strong id="progress-projects">0</strong><p>Finished in your own time</p></article>
+          <article class="stat-card"><span>Completed tasks</span><strong id="progress-tasks">0</strong><p>Small actions that moved you forward</p></article>
+          <article class="stat-card"><span>Ideas collected</span><strong id="progress-ideas">0</strong><p>Possibilities worth returning to</p></article>
+        </div>
+        <div class="panel progress-panel"><p class="eyebrow">A look back</p><h2>Your finished projects</h2><div id="completed-project-list" class="dashboard-list"></div></div>
+        <p class="storage-note">Progress is a gentle reflection, not a score. Your studio data is local to this browser and does not sync to an account.</p>
+      </div>
+    </section>
+
+    <section class="section assistant-section studio-view" id="assistant" data-view="assistant" aria-labelledby="assistant-title">
+      <div class="section-wrap assistant-card">
+        <div>
+          <p class="eyebrow">A thoughtful creative companion</p>
+          <h2 id="assistant-title">A little help getting started</h2>
+          <p>The Creative Companion can help with painting, sewing, fabric combinations, and manageable project plans. Its chat is separate from the ideas and projects you save in this browser.</p>
+          <ul class="assistant-list">
+            <li>Generate painting ideas and suggest color palettes.</li>
+            <li>Explore sewing projects and beginner techniques.</li>
+            <li>Recommend fabric and color combinations.</li>
+            <li>Break larger projects into manageable steps.</li>
+            <li>Find activities that fit the time and energy you have.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="bot-window" aria-label="Botpress AI assistant integration area">
+            <div class="bot-window-header"><span class="bot-dot" aria-hidden="true"></span><span>Creative Companion</span></div>
+            <div id="webchat">
+              <div class="bot-placeholder">
+                <div class="bot-placeholder-icon" aria-hidden="true">✦</div>
+                <h3>Your creative companion will be here</h3>
+                <p>The agent is deployed, but the official Webchat integration has not been configured for this website yet. The chat will appear here after its public embed settings are verified.</p>
+              </div>
+            </div>
+          </div>
+          <p class="embed-instructions"><strong>Integration status:</strong> Webchat is not connected yet. Add only the official embed snippet and public configuration from the deployed Botpress agent. No invented bot IDs, private keys, or website-storage claims are used here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section studio-view quote-and-roadmap" id="about" data-view="home" aria-labelledby="about-title">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">The studio philosophy</p>
+          <h2 id="about-title">Creativity belongs in real life</h2>
+        </div>
+        <div class="quote-studio">
+          <div>
+            <blockquote id="studio-quote">“A creative pause is not time away from a full life; it is a small way to feel more present in it.”</blockquote>
+            <cite id="studio-quote-credit">A note from the studio</cite>
+            <div class="quote-controls">
+              <button type="button" id="next-quote" aria-label="Show another original studio quote">↻</button>
+              <span id="quote-count">Thought 1 of 5</span>
+            </div>
+          </div>
+          <div class="quote-mark" aria-hidden="true">“</div>
+        </div>
+        <div class="why-create">
+          <h3>Why make a little room for creativity?</h3>
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <span aria-hidden="true">✦</span>
+              <strong>A pause that is yours</strong>
+              <p>A few minutes of making can feel like a welcome change of pace in a day full of responsibilities.</p>
+            </article>
+            <article class="benefit-card">
+              <span aria-hidden="true">♡</span>
+              <strong>A way to express yourself</strong>
+              <p>Colors, textures, and small choices help turn your interests into something you can see and hold.</p>
+            </article>
+            <article class="benefit-card">
+              <span aria-hidden="true">↗</span>
+              <strong>Momentum from a small start</strong>
+              <p>One tiny step makes a bigger idea feel less distant—even if today’s step is just gathering supplies.</p>
+            </article>
+          </div>
+        </div>
+        <div class="roadmap-grid" aria-label="Future studio features">
+          <article class="roadmap-card">
+            <span class="future-badge">Future feature</span>
+            <h3>Google Calendar</h3>
+            <p>Plan a creative session around your schedule, with your permission and a secure Google connection.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="future-badge">Future feature</span>
+            <h3>Gentle reminders</h3>
+            <p>Optional reminders could help you return to a project—never enabled without your choice.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="future-badge">Creator prototype</span>
+            <h3>Personal Box storage</h3>
+            <p>The site stays usable without Box. A creator-only Box connection is planned for testing after secure server-side setup.</p>
+          </article>
+        </div>
+        <blockquote class="about-quote studio-about-quote">“Creativity doesn't have to wait until life slows down. Whether you have five minutes or an entire afternoon, The Creative Life Studio helps you take small steps toward the things you've always wanted to make.”</blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-wrap">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">The Creative Life Studio</p>
+          <p class="footer-copy">Less collecting ideas. More creating them.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#home" data-view-link="home">Home</a><a href="#studio" data-view-link="studio">My Studio</a><a href="#explore" data-view-link="explore">Explore</a><a href="#ideas" data-view-link="ideas">My Ideas</a><a href="#workspace" data-view-link="workspace">Projects</a><a href="#boards" data-view-link="boards">Boards</a><a href="#planner" data-view-link="planner">Creative Planner</a><a href="#schedule" data-view-link="schedule">Sessions</a><a href="#progress" data-view-link="progress">Progress</a><a href="#assistant" data-view-link="assistant">AI Assistant</a>
+        </nav>
+      </div>
+      <p class="footer-bottom">A student project for ISM 6225. Built to make room for everyday creativity.</p>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const STORAGE_KEY = "creative-life-studio-ideas-v1";
+    const PROJECTS_STORAGE_KEY = "creative-life-studio-projects-v1";
+    const BOARDS_STORAGE_KEY = "creative-life-studio-boards-v1";
+    const SESSIONS_STORAGE_KEY = "creative-life-studio-sessions-v1";
+    const ideaForm = document.querySelector("#idea-form");
+    const ideaTitleInput = document.querySelector("#idea-title");
+    const ideaDescriptionInput = document.querySelector("#idea-description");
+    const ideaCategoryInput = document.querySelector("#idea-category");
+    const ideaStatusInput = document.querySelector("#idea-status");
+    const ideaTimeInput = document.querySelector("#idea-time");
+    const ideaNextStepInput = document.querySelector("#idea-next-step");
+    const ideaMaterialsInput = document.querySelector("#idea-materials");
+    const ideaNotesInput = document.querySelector("#idea-notes");
+    const ideaImagesInput = document.querySelector("#idea-images");
+    const imagePreviewList = document.querySelector("#image-preview-list");
+    const ideaIdInput = document.querySelector("#idea-id");
+    const ideaList = document.querySelector("#idea-list");
+    const ideasCount = document.querySelector("#ideas-count");
+    const ideaMessage = document.querySelector("#idea-message");
+    const ideaFilter = document.querySelector("#status-filter");
+    const ideaFormHeading = document.querySelector("#idea-form-heading");
+    const ideaSubmit = document.querySelector("#idea-submit");
+    const ideaCancel = document.querySelector("#idea-cancel");
+    const recommendation = document.querySelector("#recommendation");
+    const recommendationMessage = document.querySelector("#recommendation-message");
+    let ideas = loadIdeas();
+    let currentRecommendation = null;
+    let currentImages = [];
+    let projects = loadStoredArray(PROJECTS_STORAGE_KEY, isValidProject, "projects");
+    let boards = loadStoredArray(BOARDS_STORAGE_KEY, isValidBoard, "inspiration boards");
+    let sessions = loadStoredArray(SESSIONS_STORAGE_KEY, isValidSession, "creative sessions");
+    const explorePrompts = [
+      {
+        id: "postcard-sky",
+        title: "A postcard-sized evening sky",
+        category: "Painting",
+        description: "Paint a tiny sky using just a few colors. Keep it loose; the goal is to enjoy the marks, not make a masterpiece.",
+        time: "15 minutes",
+        nextStep: "Choose two colors that remind you of evening and make a few test swatches.",
+        materials: "Paper, watercolor or markers, water, scrap paper"
+      },
+      {
+        id: "color-swatches",
+        title: "A pocket color collection",
+        category: "Painting",
+        description: "Gather colors from something nearby—a flower, a favorite mug, or the view from your window—and make a small palette.",
+        time: "5 minutes",
+        nextStep: "Pick one nearby object and find three colors in it.",
+        materials: "Paper, colored pencils or paint"
+      },
+      {
+        id: "visible-mending",
+        title: "A visible-mending sampler",
+        category: "Sewing",
+        description: "Practice a few simple stitches on a scrap before using them to give a well-loved garment a little more life.",
+        time: "30 minutes",
+        nextStep: "Choose a fabric scrap and thread in a color you want to show off.",
+        materials: "Fabric scrap, needle, embroidery thread, scissors"
+      },
+      {
+        id: "fabric-bookmark",
+        title: "A scrap-fabric bookmark",
+        category: "Fabric",
+        description: "Turn a small leftover piece of fabric into a useful bookmark with a simple folded edge or a few hand stitches.",
+        time: "15 minutes",
+        nextStep: "Find a sturdy fabric scrap and trim it to bookmark size.",
+        materials: "Fabric scrap, scissors, needle and thread or fabric glue"
+      },
+      {
+        id: "painted-jar",
+        title: "A painted jar for studio tools",
+        category: "DIY",
+        description: "Give an empty jar a new job as a cheerful home for brushes, pens, or small tools.",
+        time: "30 minutes",
+        nextStep: "Wash and dry an empty jar, then choose a simple color or pattern.",
+        materials: "Clean jar, paint, brush, scrap paper"
+      },
+      {
+        id: "nature-collage",
+        title: "A tiny nature collage",
+        category: "DIY",
+        description: "Arrange a few colors and shapes inspired by a walk or the view outside into a small paper collage.",
+        time: "15 minutes",
+        nextStep: "Choose three colors or shapes from something you noticed today.",
+        materials: "Scrap paper, scissors, glue, a piece of backing paper"
+      }
+    ];
+
+    function setStatus(element, message) {
+      if (element) element.textContent = message;
+    }
+
+    function loadStoredArray(key, isValid, label) {
+      try {
+        const stored = localStorage.getItem(key);
+        if (stored === null) return [];
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed)) throw new Error(`Saved ${label} are not a list.`);
+        const validItems = parsed.filter(isValid);
+        if (validItems.length !== parsed.length) {
+          setStatus(document.querySelector("#studio-message"), `Some saved ${label} were not in a recognized format and were left unchanged in browser storage.`);
+        }
+        return validItems;
+      } catch (error) {
+        console.error(`Could not load Creative Life Studio ${label}.`, error);
+        setStatus(document.querySelector("#studio-message"), `Saved ${label} could not be read. The original browser data has not been changed.`);
+        return [];
+      }
+    }
+
+    function isValidTask(task) {
+      return task && typeof task.id === "string" && typeof task.title === "string" && typeof task.completed === "boolean";
+    }
+
+    function isValidProject(project) {
+      return project && typeof project.id === "string" && typeof project.title === "string" &&
+        Array.isArray(project.tasks) && project.tasks.every(isValidTask) &&
+        Array.isArray(project.materials) && Array.isArray(project.steps) &&
+        Array.isArray(project.milestones) && typeof project.status === "string";
+    }
+
+    function isValidBoard(board) {
+      return board && typeof board.id === "string" && typeof board.title === "string" &&
+        Array.isArray(board.colors) && board.colors.length === 3 &&
+        board.colors.every((color) => typeof color === "string" && /^#[0-9a-f]{6}$/i.test(color));
+    }
+
+    function isValidSession(session) {
+      return session && typeof session.id === "string" && typeof session.startAt === "string" &&
+        typeof session.duration === "number" && typeof session.energy === "string";
+    }
+
+    function createId() {
+      return window.crypto && typeof window.crypto.randomUUID === "function"
+        ? window.crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    }
+
+    function saveStoredArray(key, value, statusId, label, successMessage) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+        setStatus(document.getElementById(statusId), successMessage);
+        return true;
+      } catch (error) {
+        console.error(`Could not save Creative Life Studio ${label}.`, error);
+        setStatus(document.getElementById(statusId), `Your browser could not save ${label}. The previous saved data is still available; check browser storage space or settings.`);
+        return false;
+      }
+    }
+
+    function linesFrom(value) {
+      return value.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    }
+
+    function loadIdeas() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === null) return [];
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed)) throw new Error("Saved ideas are not a list.");
+        return parsed.filter((item) =>
+          item && typeof item.id === "string" && typeof item.title === "string" &&
+          typeof item.category === "string" && typeof item.status === "string"
+        );
+      } catch (error) {
+        console.error("Could not load Creative Life Studio ideas.", error);
+        window.setTimeout(() => {
+          ideaMessage.textContent = "Saved ideas could not be read from this browser. You can still add new ideas.";
+        }, 0);
+        return [];
+      }
+    }
+
+    function persistIdeas() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(ideas));
+        return true;
+      } catch (error) {
+        console.error("Could not save Creative Life Studio ideas.", error);
+        ideaMessage.textContent = "Your browser could not save this change. Check local storage settings or available space.";
+        return false;
+      }
+    }
+
+    function createBadge(text) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = text;
+      return badge;
+    }
+
+    function renderIdeas() {
+      ideaList.replaceChildren();
+      ideasCount.textContent = `(${ideas.length})`;
+      const selectedStatus = ideaFilter.value;
+      const visibleIdeas = ideas.filter((idea) => selectedStatus === "All" || idea.status === selectedStatus);
+
+      if (visibleIdeas.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty-state";
+        empty.textContent = ideas.length === 0
+          ? "Your parking lot is ready. Save a creative idea to begin."
+          : "No ideas match this status yet.";
+        ideaList.append(empty);
+        return;
+      }
+
+      visibleIdeas.forEach((idea) => {
+        const card = document.createElement("article");
+        card.className = "idea-card";
+        const content = document.createElement("div");
+        const title = document.createElement("h4");
+        title.textContent = idea.title;
+        const meta = document.createElement("div");
+        meta.className = "idea-meta";
+        meta.append(createBadge(idea.category), createBadge(idea.status));
+        content.append(title, meta);
+
+        if (idea.description) {
+          const description = document.createElement("p");
+          description.className = "idea-description";
+          description.textContent = idea.description;
+          content.append(description);
+        }
+
+        const detailEntries = [
+          ["Next small step", idea.nextStep],
+          ["Time estimate", idea.time],
+          ["Materials", idea.materials],
+          ["Notes", idea.notes]
+        ].filter(([, value]) => value);
+        if (detailEntries.length) {
+          const details = document.createElement("div");
+          details.className = "idea-extra";
+          detailEntries.forEach(([label, value]) => {
+            const detail = document.createElement("div");
+            const heading = document.createElement("strong");
+            const text = document.createElement("span");
+            heading.textContent = label;
+            text.textContent = value;
+            detail.append(heading, text);
+            details.append(detail);
+          });
+          content.append(details);
+        }
+
+        if (Array.isArray(idea.images) && idea.images.length) {
+          const images = document.createElement("div");
+          images.className = "idea-images";
+          idea.images.forEach((image, index) => {
+            if (typeof image.dataUrl !== "string" || !image.dataUrl.startsWith("data:image/")) return;
+            const preview = document.createElement("img");
+            preview.src = image.dataUrl;
+            preview.alt = `${idea.title} reference image ${index + 1}`;
+            images.append(preview);
+          });
+          if (images.childElementCount) content.append(images);
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "idea-actions";
+        const editButton = document.createElement("button");
+        editButton.type = "button";
+        editButton.className = "text-button";
+        editButton.textContent = "Edit";
+        editButton.setAttribute("aria-label", `Edit idea: ${idea.title}`);
+        editButton.addEventListener("click", () => beginEdit(idea));
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "text-button delete";
+        deleteButton.textContent = "Delete";
+        deleteButton.setAttribute("aria-label", `Delete idea: ${idea.title}`);
+        deleteButton.addEventListener("click", () => deleteIdea(idea));
+        const projectButton = document.createElement("button");
+        projectButton.type = "button";
+        projectButton.className = "text-button";
+        const linkedProject = projects.find((project) => project.sourceIdeaId === idea.id);
+        projectButton.textContent = linkedProject ? "Open project" : "Make a project";
+        projectButton.setAttribute("aria-label", `${linkedProject ? "Open project from" : "Make project from"} idea: ${idea.title}`);
+        projectButton.addEventListener("click", () => {
+          if (linkedProject) {
+            activateView("workspace", true, true);
+            return;
+          }
+          projectFromIdea(idea);
+        });
+        actions.append(editButton, projectButton, deleteButton);
+        card.append(content, actions);
+        ideaList.append(card);
+      });
+    }
+
+    function renderExploreIdeas() {
+      const list = document.querySelector("#explore-idea-list");
+      const selectedCategory = document.querySelector("#explore-category-filter").value;
+      const visiblePrompts = explorePrompts.filter((prompt) =>
+        selectedCategory === "All" || prompt.category === selectedCategory
+      );
+      list.replaceChildren();
+
+      visiblePrompts.forEach((prompt) => {
+        const card = makeNode("article", "", "explore-idea-card");
+        const meta = makeNode("div", "", "idea-meta");
+        meta.append(createBadge(prompt.category), createBadge(prompt.time));
+        card.append(meta, makeNode("h3", prompt.title), makeNode("p", prompt.description));
+
+        const firstStep = makeNode("p", "", "explore-idea-details");
+        firstStep.append(makeNode("strong", "First step: "), document.createTextNode(prompt.nextStep));
+        const materials = makeNode("p", "", "explore-idea-details");
+        materials.append(makeNode("strong", "Gather: "), document.createTextNode(prompt.materials));
+        card.append(firstStep, materials);
+
+        const actions = makeNode("div", "", "explore-idea-actions");
+        const savedIdea = ideas.find((idea) => idea.sourceExploreId === prompt.id);
+        if (savedIdea) {
+          actions.append(makeButton("Open in My Ideas", "button button-secondary button-small", `Open ${prompt.title} in My Ideas`, () => {
+            activateView("ideas", true, true);
+          }));
+        } else {
+          actions.append(makeButton("Save to My Ideas", "button button-secondary button-small", `Save ${prompt.title} to My Ideas`, () => {
+            saveExploreIdea(prompt, false);
+          }));
+        }
+        actions.append(makeButton("Start a project", "button button-primary button-small", `Start a project from ${prompt.title}`, () => {
+          saveExploreIdea(prompt, true);
+        }));
+        card.append(actions);
+        card.append(makeNode("p", savedIdea ? "Saved to My Ideas." : "", "explore-idea-status"));
+        list.append(card);
+      });
+    }
+
+    function saveExploreIdea(prompt, startProject) {
+      let idea = ideas.find((item) => item.sourceExploreId === prompt.id);
+      if (!idea) {
+        idea = {
+          id: createId(),
+          sourceExploreId: prompt.id,
+          title: prompt.title,
+          description: prompt.description,
+          category: prompt.category,
+          status: "Ready to Start",
+          time: prompt.time,
+          nextStep: prompt.nextStep,
+          materials: prompt.materials,
+          notes: "Saved from Explore.",
+          images: []
+        };
+        const previousIdeas = ideas;
+        ideas = [idea, ...ideas];
+        if (!persistIdeas()) {
+          ideas = previousIdeas;
+          return;
+        }
+        renderIdeas();
+        renderDashboard();
+        renderProgress();
+      }
+
+      renderExploreIdeas();
+      if (startProject) projectFromIdea(idea);
+    }
+
+    function resetIdeaForm() {
+      ideaForm.reset();
+      ideaIdInput.value = "";
+      currentImages = [];
+      renderImagePreviews();
+      ideaFormHeading.textContent = "Add an idea";
+      ideaSubmit.textContent = "Save Idea";
+      ideaCancel.hidden = true;
+    }
+
+    function beginEdit(idea) {
+      ideaIdInput.value = idea.id;
+      ideaTitleInput.value = idea.title;
+      ideaDescriptionInput.value = idea.description || "";
+      ideaCategoryInput.value = idea.category;
+      ideaStatusInput.value = idea.status;
+      ideaTimeInput.value = idea.time || "";
+      ideaNextStepInput.value = idea.nextStep || "";
+      ideaMaterialsInput.value = idea.materials || "";
+      ideaNotesInput.value = idea.notes || "";
+      currentImages = Array.isArray(idea.images) ? [...idea.images] : [];
+      renderImagePreviews();
+      ideaFormHeading.textContent = "Edit your idea";
+      ideaSubmit.textContent = "Save Changes";
+      ideaCancel.hidden = false;
+      ideaMessage.textContent = "";
+      ideaTitleInput.focus();
+      ideaForm.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function deleteIdea(idea) {
+      if (!window.confirm(`Delete "${idea.title}" from your Creative Parking Lot?`)) return;
+      const previousIdeas = ideas;
+      ideas = ideas.filter((item) => item.id !== idea.id);
+      if (!persistIdeas()) {
+        ideas = previousIdeas;
+        return;
+      }
+      if (ideaIdInput.value === idea.id) resetIdeaForm();
+      ideaMessage.textContent = "Idea deleted.";
+      renderIdeas();
+    }
+
+    function renderImagePreviews() {
+      imagePreviewList.replaceChildren();
+      currentImages.forEach((image, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "image-preview-item";
+        const preview = document.createElement("img");
+        preview.src = image.dataUrl;
+        preview.alt = image.name || `Selected reference image ${index + 1}`;
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.textContent = "×";
+        remove.setAttribute("aria-label", `Remove image ${image.name || index + 1}`);
+        remove.addEventListener("click", () => {
+          currentImages.splice(index, 1);
+          renderImagePreviews();
+        });
+        wrapper.append(preview, remove);
+        imagePreviewList.append(wrapper);
+      });
+    }
+
+    async function compressImage(file) {
+      if (!file.type.startsWith("image/")) throw new Error(`${file.name} is not an image.`);
+      if (file.size > 8 * 1024 * 1024) throw new Error(`${file.name} is larger than 8 MB.`);
+      const bitmap = await createImageBitmap(file);
+      const scale = Math.min(1, 1000 / Math.max(bitmap.width, bitmap.height));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+      canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("Your browser could not prepare the image.");
+      context.fillStyle = "#fffdf9";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+      bitmap.close();
+      return { name: file.name, dataUrl: canvas.toDataURL("image/jpeg", 0.72) };
+    }
+
+    ideaImagesInput.addEventListener("change", async () => {
+      const files = Array.from(ideaImagesInput.files || []);
+      ideaImagesInput.value = "";
+      const availableSlots = 3 - currentImages.length;
+      if (files.length > availableSlots) {
+        ideaMessage.textContent = `You can attach up to 3 images per project. There ${availableSlots === 1 ? "is" : "are"} ${availableSlots} slot${availableSlots === 1 ? "" : "s"} left.`;
+      }
+      for (const file of files.slice(0, Math.max(0, availableSlots))) {
+        try {
+          currentImages.push(await compressImage(file));
+          renderImagePreviews();
+        } catch (error) {
+          console.error("Could not prepare the selected reference image.", error);
+          ideaMessage.textContent = error instanceof Error ? error.message : "The selected image could not be prepared.";
+        }
+      }
+    });
+
+    ideaForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!ideaForm.reportValidity()) return;
+      const title = ideaTitleInput.value.trim();
+      if (!title) {
+        ideaTitleInput.setCustomValidity("Please enter an idea title.");
+        ideaTitleInput.reportValidity();
+        ideaTitleInput.setCustomValidity("");
+        return;
+      }
+
+      const existingId = ideaIdInput.value;
+      const previousIdeas = ideas;
+      const projectFields = {
+        title,
+        description: ideaDescriptionInput.value.trim(),
+        category: ideaCategoryInput.value,
+        status: ideaStatusInput.value,
+        time: ideaTimeInput.value,
+        nextStep: ideaNextStepInput.value.trim(),
+        materials: ideaMaterialsInput.value.trim(),
+        notes: ideaNotesInput.value.trim(),
+        images: currentImages
+      };
+      if (existingId) {
+        ideas = ideas.map((idea) => idea.id === existingId
+          ? { ...idea, ...projectFields }
+          : idea);
+      } else {
+        ideas = [{
+          id: window.crypto && typeof window.crypto.randomUUID === "function"
+            ? window.crypto.randomUUID()
+            : `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+          ...projectFields
+        }, ...ideas];
+      }
+
+      if (!persistIdeas()) {
+        ideas = previousIdeas;
+        return;
+      }
+      ideaMessage.textContent = existingId ? "Your idea was updated." : "Your idea was saved.";
+      resetIdeaForm();
+      renderIdeas();
+    });
+
+    ideaCancel.addEventListener("click", () => {
+      resetIdeaForm();
+      ideaMessage.textContent = "Edit canceled.";
+    });
+    ideaFilter.addEventListener("change", renderIdeas);
+
+    const activities = [
+      { category: "Painting", energy: "Low", duration: 5, level: "Beginner", title: "Five-minute color pairing", description: "Choose two colors that feel like today. Make small swatches and notice how they change when placed side by side.", materials: ["Paper", "Two paints or colored pencils", "Brush or pencil"], steps: ["Pick one color that matches your mood.", "Add a second color that surprises you.", "Make three tiny swatches and circle your favorite pairing."] },
+      { category: "Painting", energy: "Low", duration: 15, level: "Beginner", title: "A quiet one-object study", description: "Paint one everyday object using just a few simple shapes. The goal is to notice its light, not to make a perfect picture.", materials: ["Paper or sketchbook", "Paint or colored pencils", "One small object"], steps: ["Place an object where you can see its shadow.", "Sketch its largest shapes lightly.", "Add two colors and one shadow shape."] },
+      { category: "Painting", energy: "Medium", duration: 30, level: "Intermediate", title: "Postcard-sized garden", description: "Build a small, loose garden scene from layered marks, dots, and a limited palette.", materials: ["Thick paper", "Three paint colors", "Brush and water"], steps: ["Choose a warm and a cool color plus green.", "Block in a simple background and horizon.", "Layer loose leaf and flower marks while the paint dries."] },
+      { category: "Painting", energy: "High", duration: 15, level: "Beginner", title: "Bold brushstroke warm-up", description: "Use a few confident marks to make a tiny abstract painting. This is a quick way to get your hands moving without planning a whole project.", materials: ["Paper", "One or two paints", "Brush and water"], steps: ["Choose one color that feels energetic.", "Make five different brush marks across the page.", "Circle your favorite mark and build a tiny composition around it."] },
+      { category: "Painting", energy: "High", duration: 60, level: "Advanced", title: "Expressive color-field canvas", description: "Explore contrast and movement in an abstract composition, letting a few confident brush marks lead the way.", materials: ["Canvas or heavy paper", "Acrylic or gouache", "Wide and small brushes"], steps: ["Select a three-color palette with one strong contrast.", "Lay in broad shapes to create movement.", "Refine a few edges and add a final focal mark."] },
+      { category: "Sewing", energy: "Low", duration: 5, level: "Beginner", title: "Thread and fabric check-in", description: "Set yourself up for a calmer sewing session by matching thread to a fabric scrap and checking your tools.", materials: ["Fabric scrap", "Matching thread", "Needle or sewing machine"], steps: ["Choose a fabric scrap for a future project.", "Compare two thread colors against it.", "Put the best match and tools together in one place."] },
+      { category: "Sewing", energy: "Medium", duration: 15, level: "Beginner", title: "Hand-sewn felt bookmark", description: "Practice a simple running stitch while making a useful bookmark from a small felt scrap.", materials: ["Two felt scraps", "Embroidery thread", "Needle and scissors"], steps: ["Cut two matching bookmark shapes.", "Thread a needle and knot the end.", "Join the edges with evenly spaced running stitches."] },
+      { category: "Sewing", energy: "High", duration: 15, level: "Beginner", title: "Stitch a colorful sampler", description: "Turn a fabric scrap into a playful practice piece with a few rows of straight stitches and simple shapes.", materials: ["Fabric scrap", "Needle", "Two thread colors"], steps: ["Draw three tiny shapes on the scrap.", "Thread a needle and knot the thread.", "Add a row of stitches to outline or fill one shape."] },
+      { category: "Sewing", energy: "High", duration: 30, level: "Intermediate", title: "Reusable fabric gift wrap", description: "Turn a square of fabric into a reusable wrap and add a simple finished edge or decorative tie.", materials: ["Square cotton fabric", "Pins", "Needle and thread or sewing machine"], steps: ["Choose a square that fits a small gift.", "Press a narrow fold around each edge.", "Stitch the hem and test your wrap with a book or box."] },
+      { category: "Sewing", energy: "High", duration: 60, level: "Advanced", title: "Patchwork pocket pouch", description: "Combine fabric offcuts into a lined pouch, practicing careful seams and a clean turned edge.", materials: ["Fabric scraps", "Lining fabric", "Thread, pins, scissors"], steps: ["Arrange scraps into a front panel and stitch them together.", "Cut a matching lining and pouch back.", "Sew the pieces together, leave a turning gap, and finish the opening."] },
+      { category: "DIY", energy: "Low", duration: 5, level: "Beginner", title: "Tiny desk refresh", description: "Make one small change to your workspace using something you already own, and notice how the new arrangement feels.", materials: ["A small desk item", "A clear surface"], steps: ["Pick one corner of your desk.", "Group two or three items by color or purpose.", "Remove one thing you no longer need there."] },
+      { category: "DIY", energy: "Medium", duration: 15, level: "Beginner", title: "Pressed-paper gift tag", description: "Create a personal gift tag with a paper scrap, a little color, and a handmade detail.", materials: ["Cardstock or a paper scrap", "Pen or paint", "String and hole punch"], steps: ["Cut a small tag shape from the paper.", "Add a simple border, pattern, or tiny illustration.", "Punch a hole and tie on a short piece of string."] },
+      { category: "DIY", energy: "High", duration: 15, level: "Beginner", title: "Make a mini mood board", description: "Gather a few colors and shapes that capture what you feel like making next. A tiny board can turn a vague idea into a direction.", materials: ["Paper", "Colored scraps or magazine pages", "Glue or tape"], steps: ["Pick one word for the mood you want.", "Gather three colors or images that fit it.", "Arrange them on a small page and write your word at the top."] },
+      { category: "DIY", energy: "High", duration: 30, level: "Intermediate", title: "Upcycled jar mini-vase", description: "Give a clean glass jar a new purpose with a simple wrap, label, or painted detail for a small bunch of flowers.", materials: ["Clean glass jar", "Paint or fabric strip", "Brush or craft glue"], steps: ["Wash and dry a jar, removing any label residue.", "Choose one decorative detail and test it on a small area.", "Finish the decoration and let it dry before adding flowers."] },
+      { category: "DIY", energy: "High", duration: 60, level: "Advanced", title: "Handmade wall-art collage", description: "Build a layered paper collage from colors and shapes that feel at home in your space.", materials: ["Heavy paper or backing board", "Colored paper or magazine pages", "Scissors and glue"], steps: ["Pick a palette of three or four colors.", "Cut large shapes first, then smaller accent pieces.", "Arrange the composition before gluing each layer in place."] },
+      { category: "Painting", energy: "Medium", duration: 15, level: "Beginner", title: "Paint a tiny color garden", description: "Make a pocket-sized garden using simple dots, stems, and a handful of colors. It is an easy way to make a little art without setting up a full painting session.", materials: ["Scrap paper", "Paint or markers", "Small brush"], steps: ["Choose three colors that feel like a garden to you.", "Add loose stems and leaves with quick marks.", "Dot in a few flowers and give the page a title."] },
+      { category: "Painting", energy: "High", duration: 30, level: "Beginner", title: "Music-to-marks painting", description: "Translate one song into color and movement. Focus on the feeling of the music instead of trying to paint a recognizable subject.", materials: ["Paper", "Paint or crayons", "A favorite song"], steps: ["Choose a song and listen for one color it brings to mind.", "Make large and small marks in response to the rhythm.", "Add one final detail that captures how the song ends."] },
+      { category: "Painting", energy: "Medium", duration: 60, level: "Intermediate", title: "Memory in three colors", description: "Paint a small scene from a favorite everyday memory, using only three colors to keep the process playful and focused.", materials: ["Watercolor paper", "Three paints", "Brush and water"], steps: ["Write down three details you remember seeing.", "Sketch the broad shapes of the scene.", "Paint the largest color areas first, then add a few meaningful details."] },
+      { category: "Painting", energy: "Low", duration: 30, level: "Advanced", title: "Slow layered abstract", description: "Create a calm abstract study with translucent layers, pauses, and deliberate changes in texture.", materials: ["Heavy paper", "Watercolor or diluted acrylic", "Brush and water"], steps: ["Choose a quiet palette of two or three colors.", "Lay down a pale first wash and let it settle.", "Build a second layer with a different mark or texture."] },
+      { category: "Sewing", energy: "Medium", duration: 5, level: "Beginner", title: "Plan a tiny sewing project", description: "Choose one scrap and sketch a few practical things it could become. A tiny plan makes the next sewing session easier to start.", materials: ["Fabric scrap", "Paper", "Pencil"], steps: ["Measure or estimate your fabric scrap.", "Sketch two possible uses for it.", "Circle the one that feels easiest to begin."] },
+      { category: "Sewing", energy: "Low", duration: 15, level: "Beginner", title: "Practice a neat running stitch", description: "Use a scrap to practice a simple stitch at a relaxed pace. This little exercise builds familiarity before a larger project.", materials: ["Woven fabric scrap", "Needle", "Thread"], steps: ["Mark a short straight line on the fabric.", "Thread the needle and secure the thread.", "Practice small, evenly spaced in-and-out stitches."] },
+      { category: "Sewing", energy: "Medium", duration: 30, level: "Intermediate", title: "Sew a lavender sachet", description: "Make a small fabric sachet from two rectangles and fill it with a favorite dried herb or a little cotton stuffing.", materials: ["Two fabric rectangles", "Thread and needle", "Dried lavender or stuffing"], steps: ["Place fabric right sides together and pin the edges.", "Stitch around three sides, leaving one opening.", "Turn it right side out, add filling, and close the opening."] },
+      { category: "Sewing", energy: "High", duration: 60, level: "Beginner", title: "Make a simple drawstring bag", description: "Create a useful beginner bag with two fabric rectangles and a channel for a cord. Take your time measuring and pressing the folds.", materials: ["Two fabric rectangles", "Cord or ribbon", "Thread, pins, scissors"], steps: ["Cut two matching rectangles and finish the top edges.", "Fold and stitch a casing wide enough for the cord.", "Sew the side and bottom seams, thread the cord, and knot its ends."] },
+      { category: "DIY", energy: "Medium", duration: 5, level: "Beginner", title: "Choose a color story", description: "Pick a small palette for a future project from colors already around you. A clear color story can make it easier to start later.", materials: ["Three objects or color swatches", "Phone camera optional"], steps: ["Find one color you are drawn to today.", "Choose a supporting color and a surprising accent.", "Write the three colors in your idea notes."] },
+      { category: "DIY", energy: "Low", duration: 15, level: "Beginner", title: "Folded-paper flower", description: "Turn a sheet of paper into a simple flower for a desk or card. Keep the shapes loose and enjoy the small repetition.", materials: ["Colored paper", "Scissors", "Glue or tape"], steps: ["Cut five or six simple petal shapes.", "Arrange them in a circle with the tips overlapping.", "Add a small center and attach the flower to a card or stick."] },
+      { category: "DIY", energy: "Medium", duration: 30, level: "Intermediate", title: "Make a mini inspiration zine", description: "Fold one sheet into a tiny booklet and fill it with colors, words, and images that inspire what you might create next.", materials: ["One sheet of paper", "Pen or markers", "Scrap images optional"], steps: ["Fold a sheet into a small booklet and cut its center fold.", "Give each page a simple prompt like color, texture, or mood.", "Fill the pages quickly without editing your first ideas."] },
+      { category: "DIY", energy: "Low", duration: 60, level: "Advanced", title: "Thoughtful handmade gift set", description: "Combine two small handmade items into a personal gift, using materials and skills you already know.", materials: ["Paper, fabric, or other materials on hand", "Scissors", "Glue or sewing supplies"], steps: ["Choose who the gift is for and one thing they enjoy.", "Pick two small pieces that can be finished in an hour.", "Make each piece and wrap them together with a handwritten note."] }
+    ];
+
+    const levelRank = { Beginner: 1, Intermediate: 2, Advanced: 3 };
+
+    function chooseActivity(preferences) {
+      const categoryMatches = activities.filter((activity) =>
+        preferences.interest === "Surprise Me" || activity.category === preferences.interest
+      );
+      const withinTime = categoryMatches.filter((activity) => activity.duration <= preferences.time);
+      const feasible = withinTime.length ? withinTime : categoryMatches;
+      const ranked = feasible.map((activity) => {
+        const energyScore = activity.energy === preferences.energy ? 4 : 0;
+        const levelDistance = Math.abs(levelRank[activity.level] - levelRank[preferences.experience]);
+        const skillScore = activity.level === preferences.experience ? 3 : Math.max(0, 2 - levelDistance);
+        const timeScore = activity.duration <= preferences.time ? 5 : 0;
+        const timeDistance = Math.abs(preferences.time - activity.duration);
+        return { activity, score: energyScore + skillScore + timeScore - timeDistance / 100 };
+      });
+      const bestScore = Math.max(...ranked.map((item) => item.score));
+      const best = ranked.filter((item) => item.score === bestScore);
+      const activity = best[Math.floor(Math.random() * best.length)].activity;
+      const exact = activity.energy === preferences.energy &&
+        activity.level === preferences.experience &&
+        activity.duration <= preferences.time;
+      return { activity, exact };
+    }
+
+    function showRecommendation(result, preferences) {
+      const activity = result.activity;
+      currentRecommendation = activity;
+      document.querySelector("#recommendation-label").textContent = result.exact
+        ? "A match for your moment"
+        : "A thoughtful fit for your day";
+      document.querySelector("#recommendation-title").textContent = activity.title;
+      document.querySelector("#recommendation-description").textContent = activity.description;
+      document.querySelector("#recommendation-time").textContent =
+        `${activity.duration} minutes · ${activity.category} · ${activity.level}`;
+      document.querySelector("#recommendation-materials").textContent =
+        `Materials: ${activity.materials.join(", ")}.`;
+      const steps = document.querySelector("#recommendation-steps");
+      steps.replaceChildren();
+      activity.steps.slice(0, 3).forEach((step) => {
+        const item = document.createElement("li");
+        item.textContent = step;
+        steps.append(item);
+      });
+      const availableNow = activity.duration <= preferences.time;
+      recommendationMessage.textContent = result.exact
+        ? `A ${activity.duration}-minute ${activity.category.toLowerCase()} activity for ${preferences.energy.toLowerCase()} energy and ${preferences.experience.toLowerCase()} makers.`
+        : availableNow
+          ? `This is the closest fit for your ${preferences.time} minutes and ${preferences.energy.toLowerCase()} energy. Make it your own—there is no wrong way to begin.`
+          : `This project takes about ${activity.duration} minutes, a little longer than you have right now. Save the idea for a future creative session.`;
+      recommendation.hidden = false;
+      recommendation.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    document.querySelector("#planner-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const preferences = {
+        energy: document.querySelector("#energy").value,
+        time: Number(document.querySelector("#time").value),
+        interest: document.querySelector("#interest").value,
+        experience: document.querySelector("#experience").value
+      };
+      showRecommendation(chooseActivity(preferences), preferences);
+    });
+
+    document.querySelector("#save-recommendation").addEventListener("click", () => {
+      if (!currentRecommendation) return;
+      const idea = {
+        id: window.crypto && typeof window.crypto.randomUUID === "function"
+          ? window.crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        title: currentRecommendation.title,
+        description: currentRecommendation.description,
+        category: currentRecommendation.category,
+        status: "Ready to Start",
+        time: `${currentRecommendation.duration} minutes`,
+        nextStep: currentRecommendation.steps[0],
+        materials: currentRecommendation.materials.join(", "),
+        notes: "",
+        images: []
+      };
+      const previousIdeas = ideas;
+      ideas = [idea, ...ideas];
+      if (!persistIdeas()) {
+        ideas = previousIdeas;
+        return;
+      }
+      ideaMessage.textContent = "Your suggested activity was saved to My Ideas.";
+      recommendationMessage.textContent = "Saved to your Creative Parking Lot.";
+      renderIdeas();
+    });
+
+    renderIdeas();
+    renderExploreIdeas();
+    document.querySelector("#explore-category-filter").addEventListener("change", renderExploreIdeas);
+    document.querySelectorAll("[data-explore-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelector("#explore-category-filter").value = button.dataset.exploreFilter;
+        renderExploreIdeas();
+        document.querySelector(".explore-prompts").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    const viewLinks = Array.from(document.querySelectorAll("[data-view-link]"));
+    const studioViews = Array.from(document.querySelectorAll("[data-view]"));
+    const viewIds = new Set(["home", "explore", "studio", "ideas", "workspace", "boards", "planner", "schedule", "progress", "assistant"]);
+
+    function activateView(view, updateHistory = false, focusHeading = false) {
+      const selectedView = viewIds.has(view) ? view : "home";
+      studioViews.forEach((section) => {
+        section.hidden = section.dataset.view !== selectedView;
+      });
+      viewLinks.forEach((link) => {
+        if (link.dataset.viewLink === selectedView) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+      if (updateHistory) {
+        const matchingSection = document.querySelector(`[data-view="${selectedView}"]`);
+        const hash = matchingSection ? `#${matchingSection.id}` : "#home";
+        window.history.pushState(null, "", hash);
+      }
+      if (focusHeading) {
+        const section = document.querySelector(`[data-view="${selectedView}"]`);
+        const heading = section && section.querySelector("h1, h2");
+        if (heading) {
+          heading.setAttribute("tabindex", "-1");
+          heading.focus({ preventScroll: true });
+        }
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target || !target.dataset.view) return;
+      event.preventDefault();
+      activateView(target.dataset.view, true, true);
+    });
+
+    function activateFromHash() {
+      const targetId = window.location.hash.slice(1);
+      const target = targetId ? document.getElementById(targetId) : null;
+      activateView(target?.dataset.view || "home");
+    }
+
+    window.addEventListener("popstate", activateFromHash);
+    activateFromHash();
+
+    const studioQuotes = [
+      "A creative pause is not time away from a full life; it is a small way to feel more present in it.",
+      "Five minutes of making can turn a day from something you only got through into something you also made your own.",
+      "You do not need a free afternoon to be creative. You need a small beginning that fits the day you have.",
+      "A hobby is not another task to finish; it is a place to meet yourself outside the to-do list.",
+      "Busy seasons still hold little pockets of possibility. Let one small idea be enough for today."
+    ];
+    let quoteIndex = 0;
+    document.querySelector("#next-quote").addEventListener("click", () => {
+      quoteIndex = (quoteIndex + 1) % studioQuotes.length;
+      document.querySelector("#studio-quote").textContent = `“${studioQuotes[quoteIndex]}”`;
+      document.querySelector("#quote-count").textContent = `Thought ${quoteIndex + 1} of ${studioQuotes.length}`;
+    });
+
+    function makeNode(tagName, text = "", className = "") {
+      const node = document.createElement(tagName);
+      if (text) node.textContent = text;
+      if (className) node.className = className;
+      return node;
+    }
+
+    function makeButton(text, className, label, onClick) {
+      const button = makeNode("button", text, className);
+      button.type = "button";
+      if (label) button.setAttribute("aria-label", label);
+      button.addEventListener("click", onClick);
+      return button;
+    }
+
+    function createTask(title, completed = false) {
+      return { id: createId(), title, completed };
+    }
+
+    function updateProjectSelects() {
+      const taskSelect = document.querySelector("#task-project");
+      const sessionSelect = document.querySelector("#session-project");
+      taskSelect.replaceChildren(new Option("Choose a project", ""));
+      sessionSelect.replaceChildren(new Option("Independent creative time", ""));
+      projects.forEach((project) => {
+        const label = project.status === "Completed" ? `${project.title} (completed)` : project.title;
+        taskSelect.add(new Option(label, project.id));
+        sessionSelect.add(new Option(label, project.id));
+      });
+    }
+
+    function projectProgress(project) {
+      if (!project.tasks.length) return 0;
+      return Math.round(project.tasks.filter((task) => task.completed).length / project.tasks.length * 100);
+    }
+
+    function renderProjectCard(project) {
+      const card = makeNode("article", "", "project-card");
+      const header = makeNode("div", "", "project-header");
+      const headingGroup = makeNode("div");
+      headingGroup.append(makeNode("h3", project.title));
+      const meta = makeNode("div", "", "project-meta");
+      meta.append(createBadge(project.category), createBadge(project.skillLevel), createBadge(`${project.durationMinutes} min`), createBadge(project.energyRequirement), createBadge(project.status));
+      headingGroup.append(meta);
+      const statusButton = project.status === "Completed"
+        ? makeButton("Reopen project", "text-button", `Reopen project: ${project.title}`, () => setProjectStatus(project.id, "Active"))
+        : makeButton("Mark complete", "text-button", `Mark project complete: ${project.title}`, () => setProjectStatus(project.id, "Completed"));
+      header.append(headingGroup, statusButton);
+      card.append(header);
+
+      if (project.description) card.append(makeNode("p", project.description, "project-description"));
+
+      const percent = projectProgress(project);
+      const progressWrap = makeNode("div", "", "project-progress");
+      const progressLabel = makeNode("div", "", "project-progress-label");
+      progressLabel.append(makeNode("span", `${project.tasks.filter((task) => task.completed).length} of ${project.tasks.length} tasks complete`));
+      progressLabel.append(makeNode("span", `${percent}%`));
+      const track = makeNode("div", "", "progress-track");
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `Progress for ${project.title}`);
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", "100");
+      track.setAttribute("aria-valuenow", String(percent));
+      const fill = makeNode("div", "", "progress-fill");
+      fill.style.width = `${percent}%`;
+      track.append(fill);
+      progressWrap.append(progressLabel, track);
+      card.append(progressWrap);
+
+      const nextAction = makeNode("div", "", "project-detail");
+      nextAction.append(makeNode("strong", "Next small action"));
+      nextAction.append(makeNode("p", project.nextAction || "Choose one small next step."));
+      card.append(nextAction);
+
+      if (project.materials.length) {
+        const materials = makeNode("div", "", "project-detail");
+        materials.append(makeNode("strong", "Materials"));
+        materials.append(makeNode("p", project.materials.join(", ")));
+        card.append(materials);
+      }
+
+      const taskSection = makeNode("div", "", "project-detail");
+      taskSection.append(makeNode("strong", "Ordered steps and tasks"));
+      const taskList = makeNode("ul", "", "project-task-list");
+      project.tasks.forEach((task) => {
+        const item = makeNode("li");
+        const label = makeNode("label");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.completed;
+        checkbox.dataset.taskId = task.id;
+        checkbox.dataset.projectId = project.id;
+        checkbox.setAttribute("aria-label", `${task.completed ? "Reopen" : "Complete"} task: ${task.title}`);
+        const taskTitle = makeNode("span", task.title, task.completed ? "task-complete" : "");
+        checkbox.addEventListener("change", () => setTaskCompletion(project.id, task.id, checkbox.checked));
+        label.append(checkbox, taskTitle);
+        item.append(label);
+        taskList.append(item);
+      });
+      taskSection.append(taskList);
+      card.append(taskSection);
+
+      if (project.steps.length) {
+        const plan = makeNode("details", "", "project-detail");
+        plan.append(makeNode("summary", "View original project plan"));
+        const ordered = makeNode("ol", "", "project-task-list");
+        project.steps.forEach((step) => ordered.append(makeNode("li", step)));
+        plan.append(ordered);
+        card.append(plan);
+      }
+
+      if (project.milestones.length) {
+        const milestoneSection = makeNode("div", "", "project-detail");
+        milestoneSection.append(makeNode("strong", "Milestones"));
+        const milestoneList = makeNode("ul", "", "project-task-list");
+        project.milestones.forEach((milestone) => {
+          const item = makeNode("li");
+          const label = makeNode("label");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = milestone.completed;
+          checkbox.setAttribute("aria-label", `${milestone.completed ? "Reopen" : "Complete"} milestone: ${milestone.title}`);
+          checkbox.addEventListener("change", () => setMilestoneCompletion(project.id, milestone.id, checkbox.checked));
+          label.append(checkbox, makeNode("span", milestone.title, milestone.completed ? "task-complete" : ""));
+          item.append(label);
+          milestoneList.append(item);
+        });
+        milestoneSection.append(milestoneList);
+        card.append(milestoneSection);
+      }
+      return card;
+    }
+
+    function renderProjects() {
+      const projectList = document.querySelector("#project-list");
+      const count = document.querySelector("#project-count");
+      updateProjectSelects();
+      count.textContent = `(${projects.length})`;
+      projectList.replaceChildren();
+      if (!projects.length) {
+        projectList.append(makeNode("p", "Your project workspace is ready. Save an idea or create a project to begin.", "empty-state compact"));
+        return;
+      }
+      projects.forEach((project) => projectList.append(renderProjectCard(project)));
+    }
+
+    function commitProjects(nextProjects, message) {
+      if (!saveStoredArray(PROJECTS_STORAGE_KEY, nextProjects, "workspace-message", "projects", message)) return false;
+      projects = nextProjects;
+      renderProjects();
+      renderDashboard();
+      renderProgress();
+      return true;
+    }
+
+    function setProjectStatus(projectId, status) {
+      const nextProjects = projects.map((project) => {
+        if (project.id !== projectId) return project;
+        const nextAction = status === "Completed"
+          ? "Take a moment to appreciate what you made."
+          : project.tasks.find((task) => !task.completed)?.title || project.nextAction;
+        return { ...project, status, nextAction };
+      });
+      commitProjects(nextProjects, status === "Completed" ? "Project marked complete." : "Project reopened.");
+    }
+
+    function setTaskCompletion(projectId, taskId, completed) {
+      const nextProjects = projects.map((project) => {
+        if (project.id !== projectId) return project;
+        const tasks = project.tasks.map((task) => task.id === taskId ? { ...task, completed } : task);
+        const allTasksComplete = tasks.length > 0 && tasks.every((task) => task.completed);
+        const status = allTasksComplete ? "Completed" : "Active";
+        const nextAction = tasks.find((task) => !task.completed)?.title ||
+          "Take a moment to appreciate what you made.";
+        return { ...project, tasks, status, nextAction };
+      });
+      if (!saveStoredArray(PROJECTS_STORAGE_KEY, nextProjects, "workspace-message", "projects", "Task progress saved.")) {
+        renderProjects();
+        return;
+      }
+      projects = nextProjects;
+      renderProjects();
+      renderDashboard();
+      renderProgress();
+      const nextCheckbox = Array.from(document.querySelectorAll("#project-list input[data-task-id]"))
+        .find((checkbox) => checkbox.dataset.projectId === projectId && checkbox.dataset.taskId === taskId);
+      nextCheckbox?.focus();
+    }
+
+    function setMilestoneCompletion(projectId, milestoneId, completed) {
+      const nextProjects = projects.map((project) => project.id !== projectId ? project : ({
+        ...project,
+        milestones: project.milestones.map((milestone) =>
+          milestone.id === milestoneId ? { ...milestone, completed } : milestone
+        )
+      }));
+      if (!saveStoredArray(PROJECTS_STORAGE_KEY, nextProjects, "workspace-message", "projects", "Milestone updated.")) {
+        renderProjects();
+        return;
+      }
+      projects = nextProjects;
+      renderProjects();
+      renderDashboard();
+      renderProgress();
+    }
+
+    function projectFromIdea(idea) {
+      const existing = projects.find((project) => project.sourceIdeaId === idea.id);
+      if (existing) {
+        activateView("workspace", true, true);
+        setStatus(document.querySelector("#workspace-message"), "This idea already has a project workspace.");
+        return;
+      }
+      const parsedTime = idea.time === "1 hour" ? 60 : Number((idea.time || "").match(/\d+/)?.[0]);
+      const steps = [
+        idea.nextStep || "Gather the materials you already have.",
+        "Prepare your workspace and review the idea.",
+        "Make a first small part of the project."
+      ];
+      const project = {
+        id: createId(),
+        sourceIdeaId: idea.id,
+        title: idea.title,
+        category: ["Painting", "Sewing", "Fabric", "DIY"].includes(idea.category) ? idea.category : "DIY",
+        description: idea.description || "A project created from a saved studio idea.",
+        skillLevel: "Beginner",
+        durationMinutes: Number.isFinite(parsedTime) && parsedTime > 0 ? parsedTime : 30,
+        energyRequirement: "Medium",
+        materials: (idea.materials || "").split(",").map((item) => item.trim()).filter(Boolean),
+        steps,
+        tasks: steps.map((step) => createTask(step)),
+        milestones: [],
+        nextAction: steps[0],
+        status: "Active",
+        createdAt: new Date().toISOString()
+      };
+      if (commitProjects([project, ...projects], "Project created from your saved idea. Review its estimated skill, time, and energy in the project details.")) {
+        activateView("workspace", true, true);
+      }
+    }
+
+    function renderBoards() {
+      const list = document.querySelector("#board-list");
+      list.replaceChildren();
+      if (!boards.length) {
+        list.append(makeNode("p", "Your first inspiration board can hold colors, fabric ideas, and notes for a project.", "empty-state compact"));
+        return;
+      }
+      boards.forEach((board) => {
+        const card = makeNode("article", "", "board-card");
+        card.append(makeNode("h3", board.title), makeNode("span", board.category, "board-category"));
+        const palette = makeNode("div", "", "palette-swatches");
+        board.colors.forEach((color) => {
+          const swatch = makeNode("span", color.toUpperCase());
+          swatch.style.backgroundColor = color;
+          palette.append(swatch);
+        });
+        card.append(palette);
+        if (board.notes) card.append(makeNode("p", board.notes, "board-notes"));
+        const reference = safeHttpUrl(board.referenceUrl);
+        if (reference) {
+          const link = makeNode("a", "Open reference ↗", "board-reference");
+          link.href = reference;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          card.append(link);
+        }
+        card.append(makeButton("Delete board", "text-button delete", `Delete inspiration board: ${board.title}`, () => deleteBoard(board.id)));
+        list.append(card);
+      });
+    }
+
+    function safeHttpUrl(value) {
+      if (typeof value !== "string" || !value.trim()) return "";
+      try {
+        const url = new URL(value.trim());
+        return url.protocol === "https:" || url.protocol === "http:" ? url.href : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function renderSessions() {
+      const list = document.querySelector("#session-list");
+      list.replaceChildren();
+      const upcoming = [...sessions].sort((a, b) => new Date(a.startAt) - new Date(b.startAt));
+      if (!upcoming.length) {
+        list.append(makeNode("p", "No sessions planned yet. Add a gentle creative block when it works for you.", "empty-state compact"));
+        return;
+      }
+      upcoming.forEach((session) => {
+        const project = projects.find((item) => item.id === session.projectId);
+        const card = makeNode("article", "", "session-card");
+        const details = makeNode("div");
+        const date = new Date(session.startAt);
+        details.append(makeNode("span", Number.isNaN(date.getTime()) ? "Date not available" : date.toLocaleString(), "session-date"));
+        details.append(makeNode("h3", project?.title || session.projectTitle || "Independent creative time"));
+        details.append(makeNode("p", `${session.duration} minutes · ${session.energy} energy`));
+        if (session.notes) details.append(makeNode("p", session.notes));
+        card.append(details, makeButton("Remove", "text-button delete", "Remove planned creative session", () => deleteSession(session.id)));
+        list.append(card);
+      });
+    }
+
+    function renderDashboard() {
+      const activeProjects = projects.filter((project) => project.status !== "Completed");
+      const completedProjects = projects.filter((project) => project.status === "Completed");
+      const nextActions = activeProjects.filter((project) => project.nextAction).length;
+      document.querySelector("#stat-ideas").textContent = String(ideas.length);
+      document.querySelector("#stat-active-projects").textContent = String(activeProjects.length);
+      document.querySelector("#stat-next-actions").textContent = String(nextActions);
+      document.querySelector("#stat-completed-projects").textContent = String(completedProjects.length);
+
+      const projectList = document.querySelector("#dashboard-projects");
+      projectList.replaceChildren();
+      if (!activeProjects.length) {
+        projectList.append(makeNode("p", "No active projects yet. Start with one idea that feels interesting, not overwhelming.", "empty-state compact"));
+      } else {
+        activeProjects.slice(0, 3).forEach((project) => {
+          const row = makeNode("div", "", "dashboard-row");
+          const info = makeNode("div");
+          info.append(makeNode("strong", project.title));
+          info.append(makeNode("span", project.nextAction || "Choose a small next action"));
+          const link = makeNode("a", "Continue →");
+          link.href = "#workspace";
+          link.addEventListener("click", () => setTimeout(() => activateView("workspace"), 0));
+          row.append(info, link);
+          projectList.append(row);
+        });
+      }
+
+      const sessionList = document.querySelector("#dashboard-sessions");
+      sessionList.replaceChildren();
+      const now = Date.now();
+      const nextSessions = sessions
+        .filter((session) => new Date(session.startAt).getTime() >= now)
+        .sort((a, b) => new Date(a.startAt) - new Date(b.startAt))
+        .slice(0, 2);
+      if (!nextSessions.length) {
+        sessionList.append(makeNode("p", "No upcoming sessions. Plan one when you find a moment.", "empty-state compact"));
+      } else {
+        nextSessions.forEach((session) => {
+          const project = projects.find((item) => item.id === session.projectId);
+          const row = makeNode("div", "", "dashboard-row");
+          row.append(makeNode("strong", project?.title || session.projectTitle || "Creative time"));
+          row.append(makeNode("span", `${new Date(session.startAt).toLocaleString()} · ${session.duration} min`));
+          sessionList.append(row);
+        });
+      }
+    }
+
+    function renderProgress() {
+      const completedProjects = projects.filter((project) => project.status === "Completed");
+      const completedTasks = projects.reduce((total, project) =>
+        total + project.tasks.filter((task) => task.completed).length, 0);
+      document.querySelector("#progress-projects").textContent = String(completedProjects.length);
+      document.querySelector("#progress-tasks").textContent = String(completedTasks);
+      document.querySelector("#progress-ideas").textContent = String(ideas.length);
+      const list = document.querySelector("#completed-project-list");
+      list.replaceChildren();
+      if (!completedProjects.length) {
+        list.append(makeNode("p", "Your finished projects will appear here. Every small step counts along the way.", "empty-state compact"));
+        return;
+      }
+      completedProjects.slice(0, 8).forEach((project) => {
+        const row = makeNode("div", "", "dashboard-row");
+        row.append(makeNode("strong", project.title));
+        row.append(makeNode("span", `${project.category} · ${project.tasks.length} tracked tasks`));
+        list.append(row);
+      });
+    }
+
+    function renderAllStudioData() {
+      renderProjects();
+      renderBoards();
+      renderSessions();
+      renderDashboard();
+      renderProgress();
+    }
+
+    document.querySelector("#project-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const title = document.querySelector("#project-title").value.trim();
+      const materials = linesFrom(document.querySelector("#project-materials").value);
+      const steps = linesFrom(document.querySelector("#project-steps").value);
+      const messages = document.querySelector("#workspace-message");
+      if (!title || !materials.length || steps.length < 3) {
+        setStatus(messages, "Add a project title, at least one material, and three or more ordered steps.");
+        return;
+      }
+      const milestones = linesFrom(document.querySelector("#project-milestones").value)
+        .map((milestone) => ({ id: createId(), title: milestone, completed: false }));
+      const project = {
+        id: createId(),
+        sourceIdeaId: "",
+        title,
+        category: document.querySelector("#project-category").value,
+        description: document.querySelector("#project-description").value.trim(),
+        skillLevel: document.querySelector("#project-skill").value,
+        durationMinutes: Number(document.querySelector("#project-duration").value),
+        energyRequirement: document.querySelector("#project-energy").value,
+        materials,
+        steps,
+        tasks: steps.map((step) => createTask(step)),
+        milestones,
+        nextAction: steps[0],
+        status: "Active",
+        createdAt: new Date().toISOString()
+      };
+      if (!Number.isInteger(project.durationMinutes) || project.durationMinutes < 5 || project.durationMinutes > 600) {
+        setStatus(messages, "Choose an estimated duration between 5 and 600 minutes.");
+        return;
+      }
+      if (commitProjects([project, ...projects], "Project created. You can update its task and milestone progress below.")) {
+        form.reset();
+        document.querySelector("#project-duration").value = "30";
+        document.querySelector("#project-energy").value = "Medium";
+      }
+    });
+
+    document.querySelector("#task-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const projectId = document.querySelector("#task-project").value;
+      const title = document.querySelector("#task-title").value.trim();
+      const project = projects.find((item) => item.id === projectId);
+      if (!project || !title) {
+        setStatus(document.querySelector("#workspace-message"), "Choose a project and enter a task.");
+        return;
+      }
+      const nextProjects = projects.map((item) => item.id !== projectId ? item : ({
+        ...item,
+        tasks: [...item.tasks, createTask(title)],
+        status: "Active",
+        nextAction: item.nextAction || title
+      }));
+      if (commitProjects(nextProjects, "Task added to your project.")) {
+        document.querySelector("#task-title").value = "";
+      }
+    });
+
+    document.querySelector("#board-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const title = document.querySelector("#board-title").value.trim();
+      const referenceValue = document.querySelector("#board-reference").value.trim();
+      const referenceUrl = safeHttpUrl(referenceValue);
+      if (referenceValue && !referenceUrl) {
+        setStatus(document.querySelector("#board-message"), "Reference links must use http:// or https://.");
+        return;
+      }
+      const board = {
+        id: createId(),
+        title,
+        category: document.querySelector("#board-category").value,
+        colors: ["#board-color-one", "#board-color-two", "#board-color-three"]
+          .map((selector) => document.querySelector(selector).value.toLowerCase()),
+        notes: document.querySelector("#board-notes").value.trim(),
+        referenceUrl,
+        createdAt: new Date().toISOString()
+      };
+      const nextBoards = [board, ...boards];
+      if (!saveStoredArray(BOARDS_STORAGE_KEY, nextBoards, "board-message", "inspiration boards", "Inspiration board saved.")) return;
+      boards = nextBoards;
+      form.reset();
+      document.querySelector("#board-color-one").value = "#a7b8a0";
+      document.querySelector("#board-color-two").value = "#e8b9bf";
+      document.querySelector("#board-color-three").value = "#f8f3eb";
+      renderBoards();
+    });
+
+    function deleteBoard(boardId) {
+      if (!window.confirm("Delete this inspiration board?")) return;
+      const nextBoards = boards.filter((board) => board.id !== boardId);
+      if (!saveStoredArray(BOARDS_STORAGE_KEY, nextBoards, "board-message", "inspiration boards", "Inspiration board deleted.")) return;
+      boards = nextBoards;
+      renderBoards();
+    }
+
+    document.querySelector("#session-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const startAt = document.querySelector("#session-start").value;
+      const projectId = document.querySelector("#session-project").value;
+      const project = projects.find((item) => item.id === projectId);
+      if (Number.isNaN(new Date(startAt).getTime())) {
+        setStatus(document.querySelector("#schedule-message"), "Choose a valid date and time for your session.");
+        return;
+      }
+      const session = {
+        id: createId(),
+        projectId,
+        projectTitle: project?.title || "",
+        startAt,
+        duration: Number(document.querySelector("#session-duration").value),
+        energy: document.querySelector("#session-energy").value,
+        notes: document.querySelector("#session-notes").value.trim()
+      };
+      const nextSessions = [...sessions, session];
+      if (!saveStoredArray(SESSIONS_STORAGE_KEY, nextSessions, "schedule-message", "creative sessions", "Creative session added to your local plan.")) return;
+      sessions = nextSessions;
+      form.reset();
+      document.querySelector("#session-duration").value = "15";
+      document.querySelector("#session-energy").value = "Medium";
+      renderSessions();
+      renderDashboard();
+    });
+
+    function deleteSession(sessionId) {
+      if (!window.confirm("Remove this planned creative session?")) return;
+      const nextSessions = sessions.filter((session) => session.id !== sessionId);
+      if (!saveStoredArray(SESSIONS_STORAGE_KEY, nextSessions, "schedule-message", "creative sessions", "Creative session removed.")) return;
+      sessions = nextSessions;
+      renderSessions();
+      renderDashboard();
+    }
+
+    function initializeStudioWorkspace() {
+      renderAllStudioData();
+    }
+
+    initializeStudioWorkspace();
+  </script>
+
+  <!-- Paste the official Botpress published-bot embed code here after publishing your bot. -->
+</body>
+</html>
